@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <!-- Add icon library -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+ 
+</head>
+<body>
+
+ 			 
+           
+       <!-- fila  superior  herramientas -->
+<nav class="navbar navbar-expand-sm  navbar-dark bg-dark justify-content-end">
+  <form class="form-inline" action="/action_page.php">
+    <input class="form-control mr-sm-2" type="text" placeholder="Buscar profesionales">
+    <button class="btn btn-success" type="submit"><i class="material-icons">search</i></button>
+  </form>
+   <a class="navbar-brand" href="#">    </a>
+    <a class="navbar-brand" href="#" data-toggle="tooltip" title="Registrate!">Registrar</a>
+	 <a class="navbar-brand" href="#" data-toggle="tooltip" title="Identificate">Login</a>
+</nav>
+	   
+	   
+	   
+	   
+	    
+   
+   <!-- carrusel -->
+   
+ <img src="https://www.w3schools.com/bootstrap4/ny.jpg" alt="New York" width="100%" height="500">
+   
+   
+   <!--  fin carrusel  -->
+<main class="container">
+
+  <h1>My First Bootstrap Page</h1>
+  <p>This is some text.</p>
+
+
+
+
+<div class="card" style="width:400px">
+    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">John Doe</h4>
+      <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+      <a href="#" class="btn btn-primary">See Profile</a>
+    </div>
+  </div>
+  <br>
+  
+  
+</main>
+
+
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+</body>
+</html>
