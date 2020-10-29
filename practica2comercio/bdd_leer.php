@@ -58,7 +58,8 @@ if ($mysqli->connect_errno) {
 }
 
 
-$consultaSQL= "select eNombre,iNombre,cPuntuacion, cClave from contratos,empresas,informaticos where ceClaveEmpresas=eclave and ciClaveInformaticos=iclave order by eNombre,cPuntuacion";
+$consultaSQL= "select eNombre,iNombre,cPuntuacion, cClave from contratos,empresas,informaticos 
+where ceClaveEmpresas=eclave and ciClaveInformaticos=iclave order by cClave desc";
 		 
 if ($resultado = $mysqli->query($consultaSQL)) {
 while($fila = $resultado->fetch_assoc()){
