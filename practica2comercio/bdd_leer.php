@@ -66,7 +66,7 @@ while($fila = $resultado->fetch_assoc()){
 
 //BUCLE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-?>
+?> 
 <tr>
 <?php	
 	echo  "<td>" .  $fila["cClave"] . "</td>";
