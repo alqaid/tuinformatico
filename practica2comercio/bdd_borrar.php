@@ -44,10 +44,6 @@
 
 
 <?php	
-
-if (isset($_GET["param"])) {	
-
-
 	echo "<!----conetando-->";
 	$mysqli = @new mysqli('localhost', 'root', '', 'tuinformatico');
 	$mysqli->set_charset("utf8");
@@ -58,16 +54,13 @@ if (isset($_GET["param"])) {
 	}
  
 
-	 $sql = "delete from contratos where cClave= " . $_GET["param"];
+	 $sql = "DELETE FROM contratos WHERE cClave > 14 ";
 
 	if ($mysqli->query($sql) === TRUE) {
 	  echo "Registro borrado";
 	} else {
 	  echo "Error: " . $sql . "<br>" . $mysqli->error;
 	}
-
-
-}
 
 ?>
 </tbody>
