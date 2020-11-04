@@ -58,8 +58,14 @@ if ($mysqli->connect_errno) {
 }
 
 
-$consultaSQL= "select eNombre,iNombre,cPuntuacion, cClave from contratos,empresas,informaticos 
-where ceClaveEmpresas=eclave and ciClaveInformaticos=iclave order by cClave desc";
+$consultaSQL= "select eNombre,iNombre,cPuntuacion, cClave 
+from contratos C
+INNER JOIN empresas E on C.ceClaveEmpresas = E.eCLave
+INNER JOIN informaticos I on C.ciClaveInformaticos = I.iclave
+order by C.cClave desc";
+
+//$consultaSQL= "select eNombre,iNombre,cPuntuacion, cClave from contratos,empresas,informaticos 
+//where ceClaveEmpresas=eclave and ciClaveInformaticos=iclave order by cClave desc";
 		 
 if ($resultado = $mysqli->query($consultaSQL)) {
 while($fila = $resultado->fetch_assoc()){
