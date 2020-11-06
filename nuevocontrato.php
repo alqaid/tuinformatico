@@ -10,41 +10,48 @@
 <script>
   addEventListener('load',inicio,false);
   
-Date.prototype.yyyymmdd = function() {
-  var yyyy = this.getFullYear().toString();
-  var mm = (this.getMonth()+1).toString(); // getMonth() is zero-based
-  var dd  = this.getDate().toString();
-  return yyyy + "-" + (mm[1]?mm:"0"+mm[0]) + "-" + (dd[1]?dd:"0"+dd[0]); // padding
-};
- 
-
-  function cambioTemperatura()
-  {    
-    document.getElementById('puntuacionvalor').innerHTML=" " + document.getElementById('puntuacion').value;
-  }
-  
    function inicio()
   {
 	// JAVASCRIPT AL INICIO
 	
+ 
+	
+	var today = new Date();
+	
+	var hoy = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+	var hoy3 = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+	
+	
+ 
+ 	document.getElementById('fechainicio').value =hoy
+	today.setMonth(today.getMonth() + 1);
+		var hoy2 = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+	
+    document.getElementById('fechafin').value = hoy2;
+	
+	var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  console.log("DEVOLUCION AJAX ");
+			  
+			  document.getElementById("empresa").innerHTML = this.responseText;	   
+			  
+			}
+		  };
+		  xhttp.open("GET", "servicios/combo_empresas.php", true);
+		  xhttp.send();
 	
   }
-  $(document).ready(function(){
-	  $("#btnsubmit").click(function(){
-		$("#formularioanimado").slideToggle("slow");
-	  });
-	});
+
 
   $(document).ready(function(){
 	 // JQUERY
 	//AL CARGAR TODA LA PÁGINA, DESPUES.....  
 	  
-	cambioTemperatura();  
-    document.getElementById('puntuacion').addEventListener('mousemove',cambioTemperatura,false);
-	var today = new Date();
-	document.getElementById("fechafin").value = today.yyyymmdd();
-	  
-  
+		
+	
+	//AJAX PARA LLENAR LAS EMPRESAS
+			
 });
 </script>  
 
@@ -60,44 +67,41 @@ Date.prototype.yyyymmdd = function() {
 <!-- SITIO LIBRE PARA INCLUIR -->
 <!-- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----  -->
 <br><br>
-<h4>Incluir nuevo contrato</h4>
+<h4>Ofertar un nuevo servicio</h4><p id="mensaje"></p>
 <div class="col "  ><div class="p-3 border bg-light">
 <div id="formularioanimado">
 	 <form action="">
 		 <div class="form-group">
 			  <label for="empresa">Selecciona una empresa</label>
 			  <select class="form-control" id="empresa" name="empresa">
-				<option>1</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
+					
 			  </select>
 		</div>
 		<div class="form-group">
-			  <label for="candidato">Selecciona un candidato</label>
-			  <select class="form-control" id="candidato" name="candidato">
-				<option>1</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
-			  </select>
+			<label for="asunto">Asunto:</label> 
+			<input type="text" class="form-control" id="asunto">
+		</div>
+		<div class="form-group">
+			<label for="descripcion">Descripción de la tarea a realizar:</label>
+			<textarea   id="descripcion" class="form-control" rows="5"  ></textarea>
+		</div>
+		<div class="form-group">
+			<label for="fechainicio">Fecha Inicio Publicación:</label>
+			<input type="date" id="fechainicio" name="fechainicio" value="2021-01-01">
 		</div>
 		<div class="form-group">
 			<label for="fechafin">Fecha Fin Publicación:</label>
 			<input type="date" id="fechafin" name="fechafin" value="2021-01-01">
 		</div>
-		<div class="form-group">		
-			<label for="puntuacion">Puntuación:</label>
-			<input type="range" id="puntuacion" name="puntuacion" min="0" max="5"><span id="puntuacionvalor"></span>
-		</div>
+		
 		<div class="form-group">		
 			<label for="salario">Salario:</label>
 			<input type="number" id="salario" name="salario" min="100" max="10000" step="50">€
 		</div>
-		<button  type="submit" class="btn btn-primary">Submit</button>
+		<button  type="submit" id="submit" class="btn btn-primary">Submit</button>
 	
 	</form>	
-	</div><button id="btnsubmit"  class="btn btn-primary">Submit</button>
+	</div>
 </div></div>
 <!-- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----  -->
 <!-- FIN SITIO LIBRE PARA INCLUIR -->
