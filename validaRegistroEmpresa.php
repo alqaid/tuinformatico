@@ -13,52 +13,21 @@
 <main class=" col-9 "   >
 <!-- SITIO LIBRE PARA INCLUIR -->
 
+Está a un paso de registrar la empresa <?php echo $_POST['nombre'] ?> en tuinformatico.com <br>
+Recuerde que su correo <?php echo $_POST['correo'] ?>  será utilizado como usuario para autenficarse <br><br>
+Por favor, revise la información antes de terminar el registro: <br><br>
 
-<script>
-	function validate(){
+CIF: <?php echo $_POST['cif'] ?> <br>
+Municipio: <?php echo $_POST['municipio'] ?> <br>
+Provincia: <?php echo $_POST['provincia'] ?> <br>
+Código postal: <?php echo $_POST['cp'] ?> <br>
+País: <?php echo $_POST['pais'] ?> <br><br>
 
-        var a = document.getElementById("password").value;
-	    var b = document.getElementById("confirm_password").value;
-	    if (a!=b) {
-		    alert("Las contraseñas deben ser iguales");
-			return false;
-        }
-    }
+Si todo es correcto, pulse en Registrarse y terminará el proceso de registro: <br>
+<input type="submit" class="btn btn-success" value="Registrarme" /> <br><br>
 
-       </script>
-
-
-<FORM onSubmit="return validate()" ACTION="validaRegistroEmpresa.php" METHOD="POST">
-Para realizar el registro debe rellenar la siguiente información sobre la Empresa: <br><br>
-<div class="grid-container">
-	<div>
-		Nombre de la empresa:<br>
-		<input type="text" size="40" maxlength="64" NAME="nombre" required/><br><br>
-		Código de Identificación Fiscal (CIF) de la empresa:<br>
-		<input type="text" size="40" maxlength="64" NAME="cif" required/><br><br>
-		Municipio:<br>
-		<input type="text" size="40" maxlength="64" NAME="municipio" required/><br><br>
-		Provincia:<br>
-		<input type="text" size="40" maxlength="64" NAME="provincia" required/><br><br>
-		Código Postal:<br>
-		<input type="text" size="40" maxlength="64" NAME="cp" required/><br><br>
-		País:<br>
-		<input type="text" size="40" maxlength="64" NAME="pais" required/><br><br>
-	</div>
-	<div>
-		Correo electrónico:<br>
-		<input type="text" size="40" maxlength="64" NAME="correo" required/><br><br>
-		Por favor, introduzca su contraseña<br>
-		<input type="password" id="password" name="password" size="20" required/><br><br>
-		Confirme su contraseña<br>
-		<input type="password" id="confirm_password" placeholder="Repita su contraseña" name="confirm_password" size="20" required/><br><br>
-		<br><br>
-		<input type="submit" class="btn btn-success" value="Continuar" /><br><br>
-		<input type="reset" class="btn btn-success" value="Borrar" />
-	</div>
-</div>
-</FORM>
-
+En caso de que no sea correcto, puede volver a introducir sus datos pulsando aquí:<br>
+<input type="submit" action="registrarEmpresa.php" class="btn btn-success" value="Volver" />
 
 <!-- FIN SITIO LIBRE PARA INCLUIR -->
 </main> <!-- class="container" -->
