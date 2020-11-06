@@ -178,7 +178,7 @@
 
                                     <!-- Modal body -->
                                     <div class="modal-body">
-                                        <form>
+                                         
 											<form href="registrarEmpresa.php">
 												<button type="submit" class="btn btn-success" >Empresa</button><br>
 											</form>
@@ -186,7 +186,7 @@
 											<form action="RegistroIformatico.html">
 												<button type="submit" class="btn btn-success">Informatico</button>
 											</form>												
-                                        </form>
+                                         
                                     </div>
                                 </div>
                             </div>
