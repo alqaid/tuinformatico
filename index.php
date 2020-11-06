@@ -178,15 +178,15 @@
 
                                     <!-- Modal body -->
                                     <div class="modal-body">
-                                        <form>
-											<form href="registrarEmpresa.php">
-												<button type="submit" class="btn btn-success" >Empresa</button><br>
-											</form>
-											<label>o</label><br>
-											<form action="RegistroIformatico.html">
-												<button type="submit" class="btn btn-success">Informatico</button>
-											</form>												
-                                        </form>
+                                       
+										<form action="registrarEmpresa.php">
+											<button type="submit" class="btn btn-success">Empresa</button>
+										</form>	<br>
+										<label>o</label><br>
+										<form action="RegistroIformatico.html">
+											<button type="submit" class="btn btn-success">Informatico</button>
+										</form>												
+                                        
                                     </div>
                                 </div>
                             </div>
