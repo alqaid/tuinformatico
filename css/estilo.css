@@ -12,3 +12,12 @@ a:visited.tuinfor_menu{
 a:hover.tuinfor_menu {
  color:#495057;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+input {
+  width: 80%;
+}

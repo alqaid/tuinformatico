@@ -1,82 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Bootstrap 4 Example</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/estilo.css">
-
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <!-- Add icon library -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
-    </head>
-    <body>
-
-
-
-        <!-- fila  superior  herramientas -->
-        <nav class="navbar navbar-expand-sm  navbar-dark bg-dark justify-content-end">
-            <a 
-                <div class="container mt-3">
-				
-                    <svg height="50" width="500">
-					<a xlink:href="index.html">
-                    <text fill="green" font-size="50" font-family="Verdana" x="10" y="40">Tuinformatico.com</text>
-                    Error de logo.
-					</a>
-                    </svg>
-					
-					<form action="/action_page.php" class="form-inline">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Buscar profesionales">
-
-                        <span class="btn btn-success" type="submit" title="Buscar Profesionales"><i class="material-icons">search</i></span>
-                    </form>
-
-                    <img src="https://www.vayagif.com/images/banano.gif" alt="Mascota">
-
-                    <a type="button" class="navbar-brand" data-toggle="modal" data-target="#registro"> Registrarse </a>
-					
-                    <a type="button" class="navbar-brand" data-toggle="modal" data-target="#identificacion"> Identificarse </a>
-				      </div>
-            </a>
-        </nav>
-
-        <!-- carrusel -->
-        <a href="index.html">
-            <img src="images/tuinformatico2.png" alt="tuinformatico logo" width="100%">
-        </a>
-        <!--  fin carrusel  -->
-
-        <br>
-        <br>
-
-        <div class="container">
-            <div class = "row">
-
-                <nav>
-                    <ul class="nav nav-tabs nav-justified">
-                        <li class="nav-item">
-                            <a class="nav-link active tuinfor_menu" href="#">Profesionales</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link tuinfor_menu" href="#">Empresas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link tuinfor_menu" href="#">Historial</a>
-                        </li>
-                        <!--<li class="nav-item">
-                          <a class="nav-link disabled" href="#">Disabled</a>
-                        </li>-->
-                    </ul>
-                </nav>
-
-
-                <main class=" col-9 "   >
+<head>
+<title>TU INFORMÁTICO - NUEVO CONTRATO</title>
+<?php
+	require('head.php');
+?>
+</head>
+<body>
+<?php
+	require('cabecera.php');
+?>
+<main class=" col-9 "   >
+<!-- SITIO LIBRE PARA INCLUIR -->
 
 
                     <div class = "row">
@@ -186,30 +121,17 @@
                     </div> 
 
 
-                </main> <!-- class="container" -->
-                <aside class=" col-3 "   > <!-- BANNER -->
-                    <h2>Compartenos en tus redes sociales<h2>
-                            <a href="https://twitter.com/?lang=es">
-                                <img   src="images/twitter.png" alt=""  width="100%" height="520px">
-                            </a>
-
-                            </aside> <!-- FIN BANNER -->
-                            </div>  <!-- class="row" -->
-                            </div>  <!-- class="container" -->
-
-                            <nav class="navbar navbar-expand-sm  navbar-dark bg-dark justify-content-end">
-                                <a class="navbar-brand " href="Conocenos.php" data-toggle="tooltip" title="Conocenos!">Quienes somos</a>
-                                <a class="navbar-brand " href="Contacto.php" data-toggle="tooltip" title="Contactanos!">Contacto</a>
-                            </nav>
-
-
-                            <script>
-                                $(document).ready(function () {
-                                    $('[data-toggle="tooltip"]').tooltip();
-                                });
-
-                            </script>
-
+<!-- FIN SITIO LIBRE PARA INCLUIR -->
+</main> <!-- class="container" -->
+	<aside class=" col-3 "   > <!-- BANNER -->
+		<h2>Compartenos en tus redes sociales<h2>
+		<a href="https://twitter.com/?lang=es">
+		<img   src="images/twitter.png" alt=""  width="100%" height="520px">
+		</a>
+	</aside> <!-- FIN BANNER -->
+ <?php
+	require('pie.php');
+?>
                     <!-- The Modal -->
                     <DIV ALIGN=center>
                         <div class="modal fade" id="identificacion">
@@ -257,9 +179,13 @@
                                     <!-- Modal body -->
                                     <div class="modal-body">
                                         <form>
-											<button type="submit" class="btn btn-success">Empresa</button><br>
+											<form href="registrarEmpresa.php">
+												<button type="submit" class="btn btn-success" >Empresa</button><br>
+											</form>
 											<label>o</label><br>
-                                            <button type="submit" class="btn btn-success">Informatico</button>
+											<form action="RegistroIformatico.html">
+												<button type="submit" class="btn btn-success">Informatico</button>
+											</form>												
                                         </form>
                                     </div>
                                 </div>

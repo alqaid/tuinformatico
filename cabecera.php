@@ -39,10 +39,10 @@
                 <nav>
                     <ul class="nav nav-tabs nav-justified">
                         <li class="nav-item">
-                            <a class="nav-link active tuinfor_menu" href="index.php">Profesionales</a>
+                            <a class="nav-link active tuinfor_menu" href="RegistroIformatico.html">Profesionales</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link tuinfor_menu" href="DAMIAN.php">Empresas</a>
+                            <a class="nav-link tuinfor_menu" href="registrarEmpresa.php">Empresas</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link tuinfor_menu" href="nuevocontrato.php">+Contrato</a>
