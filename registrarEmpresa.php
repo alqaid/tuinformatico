@@ -28,7 +28,7 @@
        </script>
 
 
-<FORM onSubmit="return validate()" ACTION="validaRegistroEmpresa.php" METHOD="POST">
+<FORM onSubmit="return validate()" ACTION="resumenRegistroEmpresa.php" METHOD="POST">
 Para realizar el registro debe rellenar la siguiente información sobre la Empresa: <br><br>
 <div class="grid-container">
 	<div>
@@ -41,7 +41,7 @@ Para realizar el registro debe rellenar la siguiente información sobre la Empre
 		Provincia:<br>
 		<input type="text" size="40" maxlength="64" NAME="provincia" required/><br><br>
 		Código Postal:<br>
-		<input type="text" size="40" maxlength="64" NAME="cp" required/><br><br>
+		<input type="text" size="40" maxlength="5"  NAME="cp" required/><br><br>
 		País:<br>
 		<input type="text" size="40" maxlength="64" NAME="pais" required/><br><br>
 	</div>
