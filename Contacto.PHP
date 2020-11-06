@@ -100,11 +100,13 @@
 
                                     <!-- Modal body -->
                                     <div class="modal-body">
-                                        <form>
-											<button type="submit" class="btn btn-success">Empresa</button><br>
-											<label>o</label><br>
-                                            <button type="submit" class="btn btn-success">Informatico</button>
-                                        </form>
+                                        <form action="registrarEmpresa.php">
+											<button type="submit" class="btn btn-success">Empresa</button>
+										</form>	<br>
+										<label>o</label><br>
+										<form action="RegistroIformatico.html">
+											<button type="submit" class="btn btn-success">Informatico</button>
+										</form>	
                                     </div>
                                 </div>
                             </div>

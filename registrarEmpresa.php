@@ -30,26 +30,33 @@
 
 <FORM onSubmit="return validate()" ACTION="validaRegistroEmpresa.php" METHOD="POST">
 Para realizar el registro debe rellenar la siguiente información sobre la Empresa: <br><br>
-Nombre de la empresa:<br>
-<input type="text" size="40" maxlength="64" NAME="nombre" required/><br><br>
-Código de Identificación Fiscal (CIF) de la empresa:<br>
-<input type="text" size="40" maxlength="64" NAME="cif" required/><br><br>
-Municipio:<br>
-<input type="text" size="40" maxlength="64" NAME="municipio" required/><br><br>
-Provincia:<br>
-<input type="text" size="40" maxlength="64" NAME="provincia" required/><br><br>
-Código Postal:<br>
-<input type="text" size="40" maxlength="64" NAME="cp" required/><br><br>
-País:<br>
-<input type="text" size="40" maxlength="64" NAME="pais" required/><br><br>
-Correo electrónico:<br>
-<input type="text" size="40" maxlength="64" NAME="correo" required/><br><br>
-Por favor, introduzca su contraseña<br>
-<input type="password" id="password" name="password" size="20" required/><br><br>
-Confirme su contraseña<br>
-<input type="password" id="confirm_password" name="confirm_password" size="20" required/><br><br>
-<br><br>
-<input type="submit" value="Registrarme" /> <input type="reset" value="Borrar" />
+<div class="grid-container">
+	<div>
+		Nombre de la empresa:<br>
+		<input type="text" size="40" maxlength="64" NAME="nombre" required/><br><br>
+		Código de Identificación Fiscal (CIF) de la empresa:<br>
+		<input type="text" size="40" maxlength="64" NAME="cif" required/><br><br>
+		Municipio:<br>
+		<input type="text" size="40" maxlength="64" NAME="municipio" required/><br><br>
+		Provincia:<br>
+		<input type="text" size="40" maxlength="64" NAME="provincia" required/><br><br>
+		Código Postal:<br>
+		<input type="text" size="40" maxlength="64" NAME="cp" required/><br><br>
+		País:<br>
+		<input type="text" size="40" maxlength="64" NAME="pais" required/><br><br>
+	</div>
+	<div>
+		Correo electrónico:<br>
+		<input type="text" size="40" maxlength="64" NAME="correo" required/><br><br>
+		Por favor, introduzca su contraseña<br>
+		<input type="password" id="password" name="password" size="20" required/><br><br>
+		Confirme su contraseña<br>
+		<input type="password" id="confirm_password" placeholder="Repita su contraseña" name="confirm_password" size="20" required/><br><br>
+		<br><br>
+		<input type="submit" class="btn btn-success" value="Registrarme" /><br><br>
+		<input type="reset" class="btn btn-success" value="Borrar" />
+	</div>
+</div>
 </FORM>
 
 
@@ -110,11 +117,13 @@ Confirme su contraseña<br>
 
                                     <!-- Modal body -->
                                     <div class="modal-body">
-                                        <form>
-											<button type="submit" class="btn btn-success">Empresa</button><br>
-											<label>o</label><br>
-                                            <button type="submit" class="btn btn-success">Informatico</button>
-                                        </form>
+                                        <form action="registrarEmpresa.php">
+											<button type="submit" class="btn btn-success">Empresa</button>
+										</form>	<br>
+										<label>o</label><br>
+										<form action="RegistroIformatico.html">
+											<button type="submit" class="btn btn-success">Informatico</button>
+										</form>	
                                     </div>
                                 </div>
                             </div>
