@@ -41,21 +41,25 @@
 		  xhttp.open("GET", "servicios/combo_empresas.php", true);
 		  xhttp.send();
 	
-  }
+
+    }
+ 
+ 
+ 
 
 
   $(document).ready(function(){
 	 // JQUERY
 	//AL CARGAR TODA LA PÁGINA, DESPUES.....  
 	  
-		
+	 
 	
 	//AJAX PARA LLENAR LAS EMPRESAS
 			
 });
 </script>  
 
-
+ 
 
 </head>
 <body>
@@ -67,10 +71,10 @@
 <!-- SITIO LIBRE PARA INCLUIR -->
 <!-- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----  -->
 <br><br>
-<h4>Ofertar un nuevo servicio</h4><p id="mensaje"></p>
+<h4>Ofertar un nuevo servicio</h4>
 <div class="col "  ><div class="p-3 border bg-light">
 <div id="formularioanimado">
-	 <form action="">
+	 <form  id="form1" method="POST" action="servicios/insertar_servicio.php">
 		 <div class="form-group">
 			  <label for="empresa">Selecciona una empresa</label>
 			  <select class="form-control" id="empresa" name="empresa">
@@ -79,30 +83,41 @@
 		</div>
 		<div class="form-group">
 			<label for="asunto">Asunto:</label> 
-			<input type="text" class="form-control" id="asunto">
+			<input type="text" class="form-control" id="asunto" name="asunto" required>
 		</div>
 		<div class="form-group">
 			<label for="descripcion">Descripción de la tarea a realizar:</label>
-			<textarea   id="descripcion" class="form-control" rows="5"  ></textarea>
+			<textarea   id="descripcion" class="form-control" rows="5" name="descripcion" required ></textarea>
 		</div>
 		<div class="form-group">
 			<label for="fechainicio">Fecha Inicio Publicación:</label>
-			<input type="date" id="fechainicio" name="fechainicio" value="2021-01-01">
+			<input type="date" id="fechainicio" name="fechapublicacion" value="2021-01-01">
 		</div>
 		<div class="form-group">
 			<label for="fechafin">Fecha Fin Publicación:</label>
-			<input type="date" id="fechafin" name="fechafin" value="2021-01-01">
+			<input type="date" id="fechafin" name="fechafinpublicacion" value="2021-01-01">
 		</div>
 		
 		<div class="form-group">		
 			<label for="salario">Salario:</label>
-			<input type="number" id="salario" name="salario" min="100" max="10000" step="50">€
+			<input type="number" id="salario" name="salario" min="1" max="10000" step="1" required>€
 		</div>
-		<button  type="submit" id="submit" class="btn btn-primary">Submit</button>
-	
+		<div class="form-group">
+			<button  type="submit" id="submit" class="btn btn-primary">Submit</button>
+		</div>
 	</form>	
 	</div>
+	 
+	<div id="caja_success" class="alert alert-success alert-dismissible">
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		<strong>¡Aceptado!</strong> <spam id="respuestaok"><spam>
+	</div>
+	<div id="caja_warning" class="alert alert-warning alert-dismissible">
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		<strong>Atención!</strong> <spam id="respuestaerror"><spam>
+	</div>
 </div></div>
+<br><br>
 <!-- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----  -->
 <!-- FIN SITIO LIBRE PARA INCLUIR -->
 <!-- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----  -->
@@ -172,5 +187,53 @@
                             </div>
                         </div>
                     </DIV>
+					
+<script>
+$(document).ready(function(){
+		 $("#caja_success").hide();
+		 $("#caja_warning").hide();
+});		 
+</script>			
+<script>
+//OBLIGATORIO IR AL FINAL ESTE CÓDIGO O RESCRIBIE LA PÁGINA
+
+
+
+$("#form1").submit(function(event){
+	console.log("solicitud insertar_servicio ");
+	
+	event.preventDefault(); //prevent default action 
+	var post_url = $(this).attr("action"); //get form action url
+	var request_method = $(this).attr("method"); //get form GET/POST method
+	var form_data = $(this).serialize(); //Encode form elements for submission
+	
+	$.ajax({
+		url : post_url,
+		type: request_method,
+		data : form_data
+	}).done(function(response){ 		
+		//SCRIPT NORMAL -->		$("#mensaje").html(response);
+		//O JSON:
+		 var jsonData = JSON.parse(response);
+		 if (jsonData.success == "1")
+                {
+				  $("#formularioanimado").slideToggle("slow");
+                  $("#respuestaok").html(jsonData.respuesta);
+				    $("#caja_success").show();
+					$("#caja_warning").hide();
+                }
+                else
+                {
+                  $("#respuestaerror").html(jsonData.respuesta);
+				   $("#caja_success").hide();
+					$("#caja_warning").show();
+                }
+	});
+});
+ 
+
+ 
+</script>
+					
                             </body>
                             </html>

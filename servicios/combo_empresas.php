@@ -22,7 +22,7 @@ while($fila = $resultado->fetch_assoc()){
 
 //BUCLE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
      
-	echo  '<option value="'.  $fila["eClave"] . ')">' . $fila["eNombre"] . '</option>';
+	echo  '<option value="'.  $fila["eClave"] . '">' . $fila["eNombre"] . '</option>';
  
 //   FIN BUCLE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  
