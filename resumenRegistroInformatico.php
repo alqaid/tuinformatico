@@ -22,16 +22,19 @@
 			}else{
 				echo "<!----conexion ok -->";
 			}
-			$cif = $_POST["cif"];
-			$cp = $_POST["cp"];
-			$email = $_POST["correo"];
-			$municipio = $_POST["municipio"];
-			$nombre = $_POST["nombre"];
-			$pais = $_POST["pais"];
-			$password = $_POST["password"];
+			$E = $_POST["Email"];
+			$c = $_POST["Contraseña"];
+			$N = $_POST["Nombre"];
+			$DNI = $_POST["dni"];
+			$T = $_POST["Telefono"];
+			$Pais = $_POST["pais"];
+			$M = $_POST["municipio"];
 			$provincia = $_POST["provincia"];
-			 $sql = "INSERT INTO empresas (eCIF, eCP, eEmail, eMunicipio, eNombre, ePais, ePass, eProvincia) 
-						VALUES ('$cif','$cp','$email','$municipio','$nombre','$pais','$password','$provincia')";
+			$CP = $_POST["cp"];
+			$Dp = $_POST["descripcionP"];
+			$DG = $_POST["descripcionG"];
+			 $sql = "INSERT INTO informaticos (iCP, iDescripcion, iDescripcionCorta, iDNI, iEmail, iMunicipio, iNombre, iPais, iPass, iProvincia, iTelefono) 
+						VALUES ('$CP','$DG','$Dp','$DNI','$E','$M','$N','$Pais','$c','$provincia','$T')";
 			if ($mysqli->query($sql) === TRUE) {
 			  echo "Nuevo Registro Creado";
 			} else {
@@ -39,11 +42,13 @@
 			}
 ?>
 <br>
-La empresa <?php echo $_POST['nombre'] ?> ya está registrada en tuinformatico.com <br>
-Recuerde que su correo <?php echo $_POST['correo'] ?>  será utilizado como usuario para autenficarse <br><br>
+Su cuenta <?php echo $_POST['Nombre'] ?> ya está registrada en tuinformatico.com <br>
+Recuerde que su correo <?php echo $_POST['Email'] ?>  será utilizado como usuario para autenficarse <br><br>
 Le recuerdo su información introducida: <br><br>
 
-CIF: <?php echo $_POST['cif'] ?> <br>
+Nombre y apellidos: <?php echo $_POST['Nombre'] ?> <br>
+DNI: <?php echo $_POST['dni'] ?> <br>
+Telefono: <?php echo $_POST['Telefono'] ?> <br>
 Municipio: <?php echo $_POST['municipio'] ?> <br>
 Provincia: <?php echo $_POST['provincia'] ?> <br>
 Código postal: <?php echo $_POST['cp'] ?> <br>
