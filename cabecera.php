@@ -47,6 +47,9 @@
                         <li class="nav-item">
                             <a class="nav-link tuinfor_menu" href="nuevocontrato.php">+Contrato</a>
                         </li>
+						 <li class="nav-item">
+                            <a class="nav-link tuinfor_menu" href="buscarOfertas.php">Buscar Ofertas</a>
+                        </li>
                         <!--<li class="nav-item">
                           <a class="nav-link disabled" href="#">Disabled</a>
                         </li>-->
