@@ -35,19 +35,19 @@ Para realizar el registro debe rellenar la siguiente información sobre la Empre
 		Nombre de la empresa:<br>
 		<input type="text" size="40" maxlength="64" NAME="nombre" required/><br><br>
 		Código de Identificación Fiscal (CIF) de la empresa:<br>
-		<input type="text" size="40" maxlength="64" NAME="cif" required/><br><br>
+		<input type="number" size="40" maxlength="64" NAME="cif" required/><br><br>
 		Municipio:<br>
 		<input type="text" size="40" maxlength="64" NAME="municipio" required/><br><br>
 		Provincia:<br>
 		<input type="text" size="40" maxlength="64" NAME="provincia" required/><br><br>
 		Código Postal:<br>
-		<input type="text" size="40" maxlength="5"  NAME="cp" required/><br><br>
+		<input type="number" size="40" maxlength="5"  NAME="cp" required/><br><br>
 		País:<br>
 		<input type="text" size="40" maxlength="64" NAME="pais" required/><br><br>
 	</div>
 	<div>
 		Correo electrónico:<br>
-		<input type="text" size="40" maxlength="64" NAME="correo" required/><br><br>
+		<input type="email" size="40" maxlength="64" NAME="correo" required/><br><br>
 		Por favor, introduzca su contraseña<br>
 		<input type="password" id="password" name="password" size="20" required/><br><br>
 		Confirme su contraseña<br>
