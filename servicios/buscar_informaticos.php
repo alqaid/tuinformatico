@@ -12,28 +12,13 @@ if(isset($_SESSION['autenticado']) && $_SESSION['autenticado']!='') {
 		$devolver='';
  	 
 		
-		if (isset($_POST['empresa'])  ) {
-		if ($_POST['empresa']>0 ){
-			$where1=" and seClaveEmpresa= ? ";
-			array_push($array_where,$_POST['empresa']); 
-		}}
-		if (isset($_POST['asunto']) ) {
-			
-			$where2=" and sAsunto like CONCAT('%',?,'%')";
-			array_push($array_where,$_POST['asunto']); 
-			}
-		if (isset($_POST['salario']) ) {	 
-			$where3=" and sSalario >= ? ";
-			array_push($array_where,$_POST['salario']); 
-		} 
-		
-		
+	
 			try{
 				$conexPDO=new PDO("mysql:host=localhost;dbname=tuinformatico;charset=utf8","root","");
 				$conexPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 					
 				//----OK conexión --- PREPARAR SENTENCIA
-				$sql='SELECT sAsunto,eNombre from empresas,servicios where eClave=seClaveEmpresa ' . $where1 .    $where2  . $where3 . ' order by sFechaPublicacion desc';
+				$sql='SELECT iNombre,iMunicipio, iDescripcion from informaticos order by iClave asc';
 				$sentencia = $conexPDO->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
 				 
 				
@@ -43,11 +28,15 @@ if(isset($_SESSION['autenticado']) && $_SESSION['autenticado']!='') {
 				$devolver='';
 				$rows=0;
 				while ($fila = $sentencia->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_NEXT)) {
+					$descripcion = '';
+					if(!is_null($fila[2])){
+						$descripcion = substr($fila[2], 0,75) . '...';
+					}
 					$cards .=   '<div class="card col "   >
-									<img class="card-img-top" src="../images/oferta.png" alt="Card image" style="width:100%">
+									<img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image" style="width:100%">
 									<div class="card-body">
-										<h4 class="card-title ">' . $fila[1] . '</h4>
-										<p class="card-text">' . $fila[0] . '</p>
+										<h4 class="card-title ">' . $fila[0] . '</h4>
+										<p class="card-text">' . $fila[1] . ' - ' . $descripcion . '</p>
 										<a onclick="alert("Es necesario autentificarse para poder acceder a esa información, si no tienes cuenta hazte pulsando en Registrar")" class="btn btn-success">ver más</a>
 									</div>
 								</div>';
@@ -86,8 +75,4 @@ if(isset($_SESSION['autenticado']) && $_SESSION['autenticado']!='') {
 
  
 ?>	   
-	   
-	   
-	   
-	   
-	   
+	

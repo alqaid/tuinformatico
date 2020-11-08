@@ -14,111 +14,11 @@
 <!-- SITIO LIBRE PARA INCLUIR -->
 
 
-                    <div class = "row">
-                        <div class="card col "   >
-                            <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image" style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title ">John Doe</h4>
-                                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                                <a onclick="alert('Es necesario autentificarse para poder acceder a esa información, si no tienes cuenta hazte pulsando en Registrar')" class="btn btn-success">See Profile</a>
-                            </div>
-                        </div>
-                        <div class="card col "   >
-                            <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image" style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">John Doe</h4>
-                                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                                <a onclick="alert('Es necesario autentificarse para poder acceder a esa información, si no tienes cuenta hazte pulsando en Registrar')" class="btn btn-success">See Profile</a>
-                            </div>
-                        </div>
+<div id="resultadobusqueda">
+	
+</div>
 
-                        <div class="card col "  >
-                            <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image" style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">John Doe</h4>
-                                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                                <a onclick="alert('Es necesario autentificarse para poder acceder a esa información, si no tienes cuenta hazte pulsando en Registrar')" class="btn btn-success">See Profile</a>
-                            </div>
-                        </div>
-
-                        <div class="card col " >
-                            <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image" style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">John Doe</h4>
-                                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                                <a onclick="alert('Es necesario autentificarse para poder acceder a esa información, si no tienes cuenta hazte pulsando en Registrar')" class="btn btn-success">See Profile</a>
-                            </div>
-                        </div>
-
-                    </div> 
-
-
-
-                    <div class = "row">
-
-                        <div class="card col "  >
-                            <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image" style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">John Doe</h4>
-                                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                                <a onclick="alert('Es necesario autentificarse para poder acceder a esa información, si no tienes cuenta hazte pulsando en Registrar')" class="btn btn-success">See Profile</a>
-                            </div>
-                        </div>
-
-                        <div class="card col "  >
-                            <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image" style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">John Doe</h4>
-                                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                                <a onclick="alert('Es necesario autentificarse para poder acceder a esa información, si no tienes cuenta hazte pulsando en Registrar')" class="btn btn-success">See Profile</a>
-                            </div>
-                        </div>
-
-                        <div class="card col " >
-                            <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image" style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">John Doe</h4>
-                                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                                <a onclick="alert('Es necesario autentificarse para poder acceder a esa información, si no tienes cuenta hazte pulsando en Registrar')" class="btn btn-success">See Profile</a>
-                            </div>
-                        </div>
-
-                    </div> 
-
-
-
-
-
-                    <div class = "row">
-
-                        <div class="card col "  >
-                            <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image" style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">John Doe</h4>
-                                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                                <a onclick="alert('Es necesario autentificarse para poder acceder a esa información, si no tienes cuenta hazte pulsando en Registrar')" class="btn btn-success">See Profile</a>
-                            </div>
-                        </div>
-
-                        <div class="card col "  >
-                            <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image" style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">John Doe</h4>
-                                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                                <a onclick="alert('Es necesario autentificarse para poder acceder a esa información, si no tienes cuenta hazte pulsando en Registrar')" class="btn btn-success">See Profile</a>
-                            </div>
-                        </div>
-
-                        <div class="card col " >
-                            <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image" style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">John Doe</h4>
-                                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                                <a onclick="alert('Es necesario autentificarse para poder acceder a esa información, si no tienes cuenta hazte pulsando en Registrar')" class="btn btn-success">See Profile</a>
-                            </div>
-                        </div>
-
-                    </div> 
+                  
 
 
 <!-- FIN SITIO LIBRE PARA INCLUIR -->
@@ -145,5 +45,38 @@
 							require('modalRegistro.php');
 							?>
                         </div>
+
+<script>
+  addEventListener('load',inicio,false);
+ 
+   function inicio()
+  {
+	// --------- --------- --------- --------- 
+	// JAVASCRIPT EVENTOS LOAD
+    // --------- --------- --------- --------- 
+	
+      
+	//BUSQUEDA INFORMÁTICOS PARA EL COMBO
+	
+	 
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+	  if (this.readyState == 4 && this.status == 200) {
+		document.getElementById("resultadobusqueda").innerHTML = this.responseText;
+	  }
+	};
+	xmlhttp.open("POST", "servicios/buscar_informaticos.php", true);
+	xmlhttp.send();
+	
+
+   
+	
+}
+ 
+ 
+</script> 
+
+
+						
                             </body>
                             </html>

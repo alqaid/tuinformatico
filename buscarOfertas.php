@@ -43,7 +43,7 @@
 		
 		<div class="form-group">		
 			<label for="puntuacion">Salario mínimo:</label>
-			<input type="range" id="puntuacion" name="salario" min="0" max="10000" step="50" value="200"><span id="puntuacionvalor"></span>
+			<input type="range" id="puntuacion" name="salario" min="0" max="5000" step="50" value="200"><span id="puntuacionvalor"></span>
 		</div>
 		<div class="form-group">
 			<button  type="submit" id="submit" class="btn btn-primary">Buscar</button>
