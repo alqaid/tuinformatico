@@ -19,7 +19,8 @@ if(isset($_SESSION['autenticado']) && $_SESSION['autenticado']!='') {
 		}}
 		if (isset($_POST['asunto']) ) {
 			
-			$where2=" and sAsunto like CONCAT('%',?,'%')";
+			$where2=" and (sAsunto like CONCAT('%',?,'%')  or sDescripcion like CONCAT('%',?,'%')) ";
+			array_push($array_where,$_POST['asunto']); 
 			array_push($array_where,$_POST['asunto']); 
 			}
 		if (isset($_POST['salario']) ) {	 
@@ -33,7 +34,7 @@ if(isset($_SESSION['autenticado']) && $_SESSION['autenticado']!='') {
 				$conexPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 					
 				//----OK conexión --- PREPARAR SENTENCIA
-				$sql='SELECT sAsunto,eNombre from empresas,servicios where eClave=seClaveEmpresa ' . $where1 .    $where2  . $where3 . ' order by sFechaPublicacion desc';
+				$sql='SELECT sAsunto,eNombre from empresas,servicios where eClave=seClaveEmpresa ' . $where1 .    $where2  . $where3 . ' order by sclave desc';
 				$sentencia = $conexPDO->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
 				 
 				
