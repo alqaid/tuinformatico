@@ -11,7 +11,7 @@
 	require('cabecera.php');
 ?>
 <main class=" col-9 "   >
-<!-- SITIO LIBRE PARA INCLUIR -->
+<!--  SITIO LIBRE PARA INCLUIR  -->
 
 
 
