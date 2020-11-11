@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<?php
-	require('cookie.php');
-?>
 <html lang="en">
 <head>
 <title>TU INFORMÁTICO - NUEVO CONTRATO</title>
