@@ -10,12 +10,13 @@
                                     </div>
 
                                     <!-- Modal body -->
-                                    <div class="modal-body">
-                                        <form method="post"
+									
+                                    <div class="modal-body" >
+                                        <form id="formautenticacion" method="POST" action="servicios/autenticacion.php">
                                             <label for="e">Email:</label><br>
-                                            <input type="text" id="e" name="email"><br>
+                                            <input type="text" id="user" name="email"><br>
                                             <label for="p">Contraseña:</label><br>
-                                            <input type="password" id="p" name="contraseña"><br>
+                                            <input type="password" id="pass" name="contraseña"><br>
                                             <a href="https://www.w3schools.com">¿Olvido su contraseña?</a><br><br>
                                             <label><input type="checkbox"> Recordadme</label><br>
                                             <button type="submit" class="btn btn-success">Iniciar sesion</button>
@@ -26,3 +27,29 @@
                             </div>
                         </div>
                     </DIV>
+					
+					
+					
+			<script>
+			
+			
+$("#formautenticacion").submit(function(event){
+	console.log(" probando identificación ");
+	
+	event.preventDefault(); //prevent default action 
+	var post_url = $(this).attr("action"); //get form action url
+	var request_method = $(this).attr("method"); //get form GET/POST method
+	var form_data = $(this).serialize(); //Encode form elements for submission
+	
+	$.ajax({
+		url : post_url,
+		type: request_method,
+		data : form_data
+	}).done(function(response){ 		
+		//SCRIPT NORMAL -->		
+		$("#registro").html(response);
+		
+	});
+});
+			
+			</script>		

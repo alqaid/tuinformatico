@@ -29,7 +29,7 @@
 	   
 <FORM onSubmit="return validate()" ACTION="resumenRegistroInformatico.php" METHOD="POST">
 			<div class="grid-container">
-			<div>
+			<div class="col-6">
 				<label for="E">Email</label><br>
 				<input type="email" width="250" maxlength="64" id="E" placeholder="Introduzca su email" name="Email" required><br><br>
 				<label for="P1">Contraseña</label><br>
@@ -41,9 +41,9 @@
 				<label for="dni">DNI</label><br>
 				<input type="text" id="dni" name="dni" placeholder="Introduzca su DNI" required pattern="[0-9]{8}[A-Za-z]{1}" title="Debe poner 8 números y una letra" /><br><br>
 </div>
-<div>
+<div class="col-6">
 				<label for="phone">Numero de telefono:</label><br>
-				<input type="tel" maxlength="64 id="phone" name="Telefono" required><br><br>
+				<input type="tel" maxlength="64" id="phone" name="Telefono" required placeholder="000-000-000"><br><br>
 				<label for="M">Municipio</label><br>
 				<input type="text" required maxlength="64" id="M" placeholder="Introduzca su municipio" name="municipio"><br><br>
 				<label for="p">Provinvia</label><br>
@@ -53,15 +53,11 @@
 				<label for="pa">Pais</label><br>
 				<input type="text" required id="pa" maxlength="64" placeholder="Introduzca su pais" name="pais"><br><br>
 				</div>
-			</div>
+</div>
 				<label for="dp">Intente venderse a si mismo en pocas palabras</label><br>
-				<textarea required id="dp" maxlength="200" rows="10" cols="30" maxlength="200" name="descripcionP">
-Introduzca una breve descripcion con un maximo de 200 palabras
-				</textarea><br><br>
+				<textarea required id="dp" maxlength="200" rows="10" cols="30" maxlength="200" name="descripcionP" placeholder="Introduzca una breve descripcion con un maximo de 200 palabras"></textarea><br><br>
 				<label for="dg">Describase y diga que conocimientos tiene</label><br>
-				<textarea required id="dg" maxlength="500" rows="30" cols="100" name="descripcionG">
-Introduzca una descripcion de usted y conocimientos (Maximo 500 caracteres)
-				</textarea><br><br>
+				<textarea required id="dg" maxlength="500" rows="30" cols="100" name="descripcionG" placeholder="Introduzca una descripcion de usted y conocimientos (Maximo 500 caracteres)"></textarea><br><br>
 				<input type="submit" class="btn btn-success"><br><br>
 				</form>
 
