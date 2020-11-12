@@ -35,11 +35,12 @@ if(isset($_SESSION['autenticado']) && $_SESSION['autenticado']!='') {
 					
 				//----OK conexión --- PREPARAR SENTENCIA
 				$sql='SELECT sAsunto,eNombre from empresas,servicios where eClave=seClaveEmpresa ' . $where1 .    $where2  . $where3 . ' order by sclave desc';
-				$sentencia = $conexPDO->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
-				 
-				
-				$sentencia->execute($array_where);
-			 
+				$sentencia = $conexPDO->prepare($sql);
+				 		
+				$res = $sentencia->execute($array_where);
+				if (!$res){
+								die('Error: SQL no válida');
+							}
 				$cards='';
 				$devolver='';
 				$rows=0;
