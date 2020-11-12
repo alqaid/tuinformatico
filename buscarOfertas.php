@@ -3,7 +3,7 @@
 <head>
 <title>TU INFORMÁTICO - NUEVO CONTRATO</title>
 <?php
-	require('head.php');
+	require('head.php'); 
 ?>
 
 
