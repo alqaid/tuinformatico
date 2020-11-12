@@ -2,11 +2,37 @@
                     <DIV ALIGN=center>
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
-
+								
+								<nav>
+								<ul class="nav nav-tabs nav-justified">
+								<li class="nav-item">
+								<strong id="I" class="nav-link tuinfor_menu" style="background-color:#28a745;border-color: #28a745;"
+								onclick='document.getElementById("registrarse").href = "registroInformatico.php";
+										document.getElementById("titulo").innerHTML= "Identificarse/Informatico";
+										document.getElementById("I").className= "nav-link tuinfor_menu";
+										document.getElementById("E").className= "nav-link active tuinfor_menu";
+										document.getElementById("I").style = "background-color:#28a745;border-color: #28a745";
+										document.getElementById("E").style = "color: #007bff";
+								'>Informatico</strong>
+								</li>
+								<li class="nav-item">
+								<strong href="#" id="E" class="nav-link active tuinfor_menu" style="color:#007bff"
+								onclick='document.getElementById("registrarse").href = "registrarEmpresa.php";
+										document.getElementById("titulo").innerHTML= "Identificarse/Empresa";
+										document.getElementById("I").className= "nav-link active tuinfor_menu";
+										document.getElementById("E").className= "nav-link tuinfor_menu";
+										document.getElementById("I").style = "color: #007bff";
+										document.getElementById("E").style = "background-color:#28a745;border-color: #28a745";
+								'>Empresa</strong>
+								</li>
+								
+								</ul>
+								</nav>
+								
                                     <!-- Modal Header -->
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">Identificarse</h4>
-                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    <div class="modal-header" style="background-color:#28a745;border-color: #28a745;">
+                                        <h4 id="titulo"class="modal-title value">Identificarse/Informatico</h4>
+										<button type="button" class="close" data-dismiss="modal">×</button>
                                     </div>
 
                                     <!-- Modal body -->
@@ -21,17 +47,16 @@
                                             <label><input type="checkbox"> Recordadme</label><br>
                                             <button type="submit" class="btn btn-success">Iniciar sesion</button>
                                         </form>
-                                        <a href="" data-dismiss="modal" data-toggle="modal" data-target="#registro">¡Registrate!</a>
+                                        <a href="registroInformatico.php" id="registrarse">¡Registrate!</a>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </DIV>
-					
-					
-					
+                           </div>
+                    </DIV>	
 			<script>
 			
+			onclick='document.getElementById("registrarse").href = "registrarEmpresa.php";
+													document.getElementById("I").class = "nav-link tuinfor_menu";
+													document.getElementById("E").class = "nav-link active tuinfor_menu";
 			
 $("#formautenticacion").submit(function(event){
 	console.log(" probando identificación ");
