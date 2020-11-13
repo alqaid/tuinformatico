@@ -30,9 +30,9 @@ if(isset($_SESSION['autenticado']) && $_SESSION['autenticado']!='') {
 		
 		
 			try{
-				 //required conexion
-				require ('conexion.php');
-							
+				$conexPDO=new PDO("mysql:host=localhost;dbname=tuinformatico;charset=utf8","root","");
+				$conexPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+					
 				//----OK conexión --- PREPARAR SENTENCIA
 				$sql='SELECT sAsunto,eNombre from empresas,servicios where eClave=seClaveEmpresa ' . $where1 .    $where2  . $where3 . ' order by sclave desc';
 				$sentencia = $conexPDO->prepare($sql);

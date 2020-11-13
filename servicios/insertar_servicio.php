@@ -18,11 +18,11 @@ if(isset($_SESSION['autenticado']) && $_SESSION['autenticado']!='') {
 			// fvalidarFecha  devuelve true o false, está incluida en funciones.php
 			if( fvalidarFecha($_POST['fechafinpublicacion'])){ 
 			if( fvalidarFecha($_POST['fechapublicacion'])){  
-			if( $_POST['fechapublicacion'] <= $_POST['fechafinpublicacion']){  
+			 
 	 			try{
-					
-					       //required conexion
-							require ('conexion.php');	
+							$conexPDO=new PDO("mysql:host=localhost;dbname=tuinformatico;charset=utf8","root","");
+							$conexPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+								
 							//----OK conexión --- PREPARAR SENTENCIA
 							$sql='INSERT INTO servicios (seClaveEmpresa,sAsunto,sDescripcion,sSalario,sFechaPublicacion,sfechafinpublicacion) values (?,?,?,?,?,?)';
 							$stmt=$conexPDO->prepare($sql);
@@ -40,9 +40,6 @@ if(isset($_SESSION['autenticado']) && $_SESSION['autenticado']!='') {
 						}catch(Exception $e){
 							die('Error:'.$e->GetMessage());
 					} 	
-			}else {
-				 echo '{"success":"0","respuesta":"fecha final inferior a fecha inicial"}';
-			}
 			}else {
 				 echo '{"success":"0","respuesta":"fecha inicio publicacion no válida"}';
 			}

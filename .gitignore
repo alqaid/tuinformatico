@@ -1,10 +1,9 @@
+
 *.zip
 _documentacion/1ª versión.docx
+practica2comercio/git.txt
+practica2comercio/tuinformatico.sql
 temp/
-practica2comercio/bdd_borrar.php
-practica2comercio/bdd_insertar.php
-practica2comercio/bdd_leer.php
-practica2comercio/bdd_modificar.php
-practica2comercio/bdd_borrar.php
-practica2comercio/bdd_borrar.php
-practica2comercio/bdd_insertar.php
+practica2comercio/otra forma/
+practica3comercio/
+practica4comercio/
