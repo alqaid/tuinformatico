@@ -5,7 +5,7 @@
 				
                     <svg height="50" width="500">
 					<a xlink:href="index.php">
-                    <text fill="green" font-size="50" font-family="Verdana" x="10" y="40">Tuinformatico.com</text>
+                    <text fill="#28a745" font-size="50" font-family="Verdana" x="10" y="40">Tuinformatico.com</text>
                     Error de logo.
 					</a>
                     </svg>
@@ -31,27 +31,21 @@
         </a>
         <!--  fin carrusel  -->
 
+<nav >
+	<ul class="nuestromenu">
+		  <li><a class="active" href="index.php">Home</a></li>
+		  <li><a  href="RegistroInformatico.php">Nuevo Profesional</a></li>
+		  <li><a  href="registrarEmpresa.php">Nueva Empresa</a></li>
+		  <li><a  href="nuevocontrato.php">Nueva Oferta</a></li>
+		  <li><a  href="buscarofertas.php">Ofertas</a></li>
+	</ul> 
+</nav>
+
+
+
         <br>
         <br>
 		    <div class="container">
             <div class = "row">
 
-                <nav>
-                    <ul class="nav nav-tabs nav-justified">
-                        <li class="nav-item">
-                            <a class="nav-link active tuinfor_menu" href="RegistroIformatico.html">Profesionales</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link tuinfor_menu" href="registrarEmpresa.php">Empresas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link tuinfor_menu" href="nuevocontrato.php">+Contrato</a>
-                        </li>
-						 <li class="nav-item">
-                            <a class="nav-link tuinfor_menu" href="buscarOfertas.php">Buscar Ofertas</a>
-                        </li>
-                        <!--<li class="nav-item">
-                          <a class="nav-link disabled" href="#">Disabled</a>
-                        </li>-->
-                    </ul>
-                </nav>
+                
