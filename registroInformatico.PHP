@@ -87,5 +87,8 @@
 							require('modalRegistro.php');
 							?>
                         </div>
+<script>
+	document.getElementById("menu_cabecera_reg_inf").className  = "nuestromenus_activado";
+</script>						
                             </body>
                             </html>

@@ -27,3 +27,7 @@ ul.nuestromenu  li a:hover {
   background-color: #28a745;
   color: white;
 }
+a.nuestromenus_activado:link{
+  background-color: gray;
+  color: white;
+}

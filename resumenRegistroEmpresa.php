@@ -79,5 +79,8 @@ Para salir pulse en terminar: <br>
 							require('modalRegistro.php');
 							?>
                         </div>
+<script>
+	document.getElementById("menu_cabecera_reg_emp").className  = "nuestromenus_activado";
+</script>						
                             </body>
                             </html>
