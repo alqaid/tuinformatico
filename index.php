@@ -33,7 +33,7 @@
 		</a>
 	</aside> <!-- FIN BANNER -->
  <?php
-	require('pie.php');
+	require('pieConCookieVisitas.php');
 ?>
                                         <!-- The Modal -->
 					    <div class="modal fade" id="identificacion">
