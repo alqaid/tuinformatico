@@ -9,6 +9,20 @@
 <a class="navbar-brand " href="Contacto.php" data-toggle="tooltip" title="Contactanos!">Contacto</a>
 </div>
 </nav>
+ <nav class="navbar navbar-expand-sm  navbar-dark bg-dark justify-content-end">
+  <div class="collapse navbar-collapse" id="navbarText">
+ <p id="textopie" class="text-white "></p>
+</div>
+<a class="navbar-brand " data-toggle="tooltip"><?php echo  $mensaje2;?></a>
+</div>
+</nav>
+ <nav class="navbar navbar-expand-sm  navbar-dark bg-dark justify-content-end">
+  <div class="collapse navbar-collapse" id="navbarText">
+ <p id="textopie" class="text-white "></p>
+</div>
+<a class="navbar-brand " data-toggle="tooltip"><?php echo  $mensaje3;?></a>
+</div>
+</nav>
 
 
                             <script>
