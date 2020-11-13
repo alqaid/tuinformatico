@@ -159,7 +159,7 @@ $("#form1").submit(function(event){
 		$("#resultadobusqueda").html(response);
 		
 	});
-});
+}); 
 </script>	
 <script>	
 	document.getElementById("menu_cabecera_bus_oft").className  = "nuestromenus_activado";				

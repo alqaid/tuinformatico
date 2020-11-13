@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <?php
+
 	require('cookieVisitas.php');
+ 
 ?>
 <html lang="en">
 <head>
