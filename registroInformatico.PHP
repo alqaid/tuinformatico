@@ -43,13 +43,13 @@
 </div>
 <div class="col-6">
 				<label for="phone">Numero de telefono:</label><br>
-				<input type="tel" maxlength="64" id="phone" name="Telefono" required placeholder="000-000-000"><br><br>
+				<input type="tel" maxlength="64" id="phone" name="Telefono" required pattern="[0-9]{9}" title="Escriba 9 numeros. Ejemplo 000000000"><br><br>
 				<label for="M">Municipio</label><br>
 				<input type="text" required maxlength="64" id="M" placeholder="Introduzca su municipio" name="municipio"><br><br>
 				<label for="p">Provinvia</label><br>
 				<input type="text" required maxlength="64" id="p" placeholder="Introduzca su provincia" name="provincia"><br><br>
 				<label for="cp">Codigo postal</label><br>
-				<input type="number" required id="cp" required pattern="[0-9]{5}" placeholder="Introduzca su codigo postal" name="cp"><br><br>
+				<input type="text" required id="cp" required pattern="[0-9]{5}" placeholder="Introduzca su codigo postal" name="cp"><br><br>
 				<label for="pa">Pais</label><br>
 				<input type="text" required id="pa" maxlength="64" placeholder="Introduzca su pais" name="pais"><br><br>
 				</div>

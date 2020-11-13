@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<?php
-	require('cookie.php');
-?>
 <html lang="en">
 <head>
 <title>TU INFORMÁTICO - NUEVO CONTRATO</title>
@@ -32,9 +29,10 @@
 			$nombre = $_POST["nombre"];
 			$pais = $_POST["pais"];
 			$password = $_POST["password"];
+			$password_hash = password_hash($password, PASSWORD_DEFAULT);
 			$provincia = $_POST["provincia"];
 			 $sql = "INSERT INTO empresas (eCIF, eCP, eEmail, eMunicipio, eNombre, ePais, ePass, eProvincia) 
-						VALUES ('$cif','$cp','$email','$municipio','$nombre','$pais','$password','$provincia')";
+						VALUES ('$cif','$cp','$email','$municipio','$nombre','$pais','$password_hash','$provincia')";
 			if ($mysqli->query($sql) === TRUE) {
 			  echo "Nuevo Registro Creado";
 			} else {

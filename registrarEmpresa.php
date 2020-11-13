@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<?php
-	require('cookie.php');
-?>
 <html lang="en">
 <head>
 <title>TU INFORMÁTICO - NUEVO CONTRATO</title>
@@ -35,29 +32,28 @@
 Para realizar el registro debe rellenar la siguiente información sobre la Empresa: <br><br>
 <div class="grid-container">
 	<div>
-		Nombre de la empresa:<br>
-		<input type="text" size="40" maxlength="64" NAME="nombre" required/><br><br>
-		Código de Identificación Fiscal (CIF) de la empresa:<br>
-		<input type="number" size="40" maxlength="64" NAME="cif" required/><br><br>
-		Municipio:<br>
-		<input type="text" size="40" maxlength="64" NAME="municipio" required/><br><br>
-		Provincia:<br>
-		<input type="text" size="40" maxlength="64" NAME="provincia" required/><br><br>
-		Código Postal:<br>
-		<input type="number" size="40" maxlength="5"  NAME="cp" required/><br><br>
-		País:<br>
-		<input type="text" size="40" maxlength="64" NAME="pais" required/><br><br>
+		<label for="N">Nombre de la empresa</label><br>
+		<input type="text" id="N" size="40" maxlength="64" placeholder="Introduzca el nombre de empresa" NAME="nombre" required/><br><br>
+		<label for="CIF">Código de Identificación Fiscal (CIF)</label><br>
+		<input type="text" id="CIF" size="40" maxlength="64" placeholder="Introduzca su CIF" pattern="(([X-Z]{1})([-]?)(\d{7})([-]?)([A-Z]{1}))|((\d{8})([-]?)([A-Z]{1}))" NAME="cif" required/><br><br>
+		<label for="M">Municipio</label><br>
+		<input type="text" id="M" size="40" maxlength="64" placeholder="Introduzca su municipio" NAME="municipio" required/><br><br>
+		<label for="p">Provinvia</label><br>
+		<input type="text" id="p" size="40" maxlength="64" placeholder="Introduzca su provincia" NAME="provincia" required/><br><br>
+		<label for="cp">Codigo postal</label><br>
+		<input type="text" id="cp" required pattern="[0-9]{5}" size="40" maxlength="5" placeholder="Introduzca su codigo postal"  NAME="cp" required/><br><br>
+		<label for="pa">Pais</label><br>
+		<input type="text" id="pa" size="40" maxlength="64" placeholder="Introduzca el pais" NAME="pais" required/><br><br>
 	</div>
 	<div>
-		Correo electrónico:<br>
-		<input type="email" size="40" maxlength="64" NAME="correo" required/><br><br>
-		Por favor, introduzca su contraseña<br>
-		<input type="password" id="password" name="password" size="20" required/><br><br>
-		Confirme su contraseña<br>
+		<label for="E">Email</label><br>
+		<input type="email" id="E" size="40" maxlength="64" placeholder="Introduzca el email" NAME="correo" required/><br><br>
+		<label for="password">Contraseña</label><br>
+		<input type="password" id="password" name="password" placeholder="Introduzca su contraseña" size="20" required/><br><br>
+		<label for="confirm_password">Repita su contraseña</label><br>
 		<input type="password" id="confirm_password" placeholder="Repita su contraseña" name="confirm_password" size="20" required/><br><br>
 		<br><br>
 		<input type="submit" class="btn btn-success" value="Continuar" /><br><br>
-		<input type="reset" class="btn btn-success" value="Borrar" />
 	</div>
 </div>
 </FORM>

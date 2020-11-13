@@ -24,6 +24,7 @@
 			}
 			$E = $_POST["Email"];
 			$c = $_POST["Contraseña"];
+			$password_hash = password_hash($c, PASSWORD_DEFAULT);
 			$N = $_POST["Nombre"];
 			$DNI = $_POST["dni"];
 			$T = $_POST["Telefono"];
@@ -34,7 +35,7 @@
 			$Dp = $_POST["descripcionP"];
 			$DG = $_POST["descripcionG"];
 			 $sql = "INSERT INTO informaticos (iCP, iDescripcion, iDescripcionCorta, iDNI, iEmail, iMunicipio, iNombre, iPais, iPass, iProvincia, iTelefono) 
-						VALUES ('$CP','$DG','$Dp','$DNI','$E','$M','$N','$Pais','$c','$provincia','$T')";
+						VALUES ('$CP','$DG','$Dp','$DNI','$E','$M','$N','$Pais','$password_hash','$provincia','$T')";
 			if ($mysqli->query($sql) === TRUE) {
 			  echo "Nuevo Registro Creado";
 			} else {
