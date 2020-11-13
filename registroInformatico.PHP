@@ -30,8 +30,8 @@
 <FORM onSubmit="return validate()" ACTION="resumenRegistroInformatico.php" METHOD="POST">
 			<div class="grid-container">
 			<div class="col-6">
-				<label for="E">Email</label><br>
-				<input type="email" width="250" maxlength="64" id="E" placeholder="Introduzca su email" name="Email" required><br><br>
+				<label for="Email">Email</label><br>
+				<input type="email" width="250" maxlength="64" id="Email" placeholder="Introduzca su email" name="Email" required><br><br>
 				<label for="P1">Contraseña</label><br>
 				<input type="password" maxlength="64" id="P1" placeholder="Indroduzca su contraseña" name="Contraseña" required><br><br>
 				<label for="P2">Repita su contraseña</label><br>

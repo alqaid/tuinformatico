@@ -46,8 +46,8 @@ Para realizar el registro debe rellenar la siguiente información sobre la Empre
 		<input type="text" id="pa" size="40" maxlength="64" placeholder="Introduzca el pais" NAME="pais" required/><br><br>
 	</div>
 	<div>
-		<label for="E">Email</label><br>
-		<input type="email" id="E" size="40" maxlength="64" placeholder="Introduzca el email" NAME="correo" required/><br><br>
+		<label for="Email">Email</label><br>
+		<input type="email" id="Email" size="40" maxlength="64" placeholder="Introduzca el email" NAME="correo" required/><br><br>
 		<label for="password">Contraseña</label><br>
 		<input type="password" id="password" name="password" placeholder="Introduzca su contraseña" size="20" required/><br><br>
 		<label for="confirm_password">Repita su contraseña</label><br>
