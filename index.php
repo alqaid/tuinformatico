@@ -8,8 +8,6 @@
 <?php
 	require('head.php');
 ?>
-
-
 </head>
 <body>
 <?php
@@ -80,9 +78,7 @@
  
  
 </script> 
-<script>
-	document.getElementById("menu_cabecera_home").className  = "nuestromenus_activado";
-</script>
+
 
 						
                             </body>

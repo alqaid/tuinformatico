@@ -191,8 +191,6 @@ $("#form1").submit(function(event){
 
  
 </script>
-<script>	
-	document.getElementById("menu_cabecera_reg_con").className  = "nuestromenus_activado";				
-</script>					
+					
                             </body>
                             </html>

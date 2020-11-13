@@ -33,14 +33,11 @@
 
 <nav >
 	<ul class="nuestromenu">
-	<!-- ojo: EN CADA PAGINA LLAMAMOS 
-		document.getElementById("menu_cabecera_bus_oft").className  = "nuestromenus_activado";
-		PARA CAMBIAR EN ENLACE ACTIVO-->
-		  <li><a id="menu_cabecera_home"   href="index.php">Home</a></li>
-		  <li><a id="menu_cabecera_reg_inf" href="RegistroInformatico.php">Nuevo Profesional</a></li>
-		  <li><a id="menu_cabecera_reg_emp" href="registrarEmpresa.php">Nueva Empresa</a></li>
-		  <li><a id="menu_cabecera_reg_con" href="nuevocontrato.php">Nueva Oferta</a></li>
-		  <li><a id="menu_cabecera_bus_oft" href="buscarofertas.php">Ofertas</a></li>
+		  <li><a class="active" href="index.php">Home</a></li>
+		  <li><a  href="RegistroInformatico.php">Nuevo Profesional</a></li>
+		  <li><a  href="registrarEmpresa.php">Nueva Empresa</a></li>
+		  <li><a  href="nuevocontrato.php">Nueva Oferta</a></li>
+		  <li><a  href="buscarofertas.php">Ofertas</a></li>
 	</ul> 
 </nav>
 
