@@ -161,6 +161,8 @@ $("#form1").submit(function(event){
 	});
 });
 </script>	
-					
+<script>	
+	document.getElementById("menu_cabecera_bus_oft").className  = "nuestromenus_activado";				
+</script>	
                             </body>
                             </html>
