@@ -81,7 +81,9 @@
  
 </script> 
 
-
+<script>	
+	document.getElementById("menu_cabecera_home").className  = "nuestromenus_activado";				
+</script>
 						
                             </body>
                             </html>
