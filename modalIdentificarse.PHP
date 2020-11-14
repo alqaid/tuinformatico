@@ -1,3 +1,14 @@
+<?php
+session_start();
+ 
+if(isset($_SESSION['eClave']) || isset($_SESSION['iClave'])){
+    header('Location: Error.php');
+    exit;
+} else {
+    // Show users the page!
+}
+?>
+
 <!-- The Modal -->
                     <DIV ALIGN=center>
                             <div class="modal-dialog modal-dialog-centered">
@@ -69,23 +80,12 @@ $("#formautenticacion").submit(function(event){
 		type: request_method,
 		data : form_data
 	}).done(function(response){ 
-			
-	});
-});
-			</script>	
-			
-<script>
-		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.onreadystatechange = function() {
-			location.replace("index.php");
-		if (this.readyState == 4 && this.status == 200) {
-			var myObj = JSON.parse(this.responseText);
-			if(myObj=="t"){
+		var myObj = JSON.parse(response);
+			if(myObj.age==40){
 				location.replace("index.php");
 			}else{
 				document.getElementById("Error").innerHTML = "Error al introducir usuario o contraseña";
 			}
-		};	
-		xmlhttp.open("GET", "servicios/loginEmpresaloginInformatico.php", true);
-		xmlhttp.send();
-</script>		
+	});
+});
+			</script>	

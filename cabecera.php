@@ -62,7 +62,7 @@ if(!isset($_SESSION['eClave'])){
 		  <li><a id="menu_cabecera_home" href="index.php">Informaticos</a></li>
 		  <li><a id="menu_cabecera_bus_oft" href="buscarofertas.php">Ofertas</a></li>
 		  <li><a id="menu_cabecera_reg_con" style="display:none" href="nuevocontrato.php">Nueva Oferta</a></li>
-		  <li><a id="menu_cabecera_datos" style="display:none" href="buscarofertas.php">Cambiar datos</a></li>
+		  <li><a id="menu_cabecera_datos" style="display:none" href="#">Cambiar datos</a></li>
 		  <li><a id="menu_cabecera_cerrar_Session" style="display:none" href="buscarofertas.php">Cerrar sesion</a></li>
 	</ul> 
 </nav>
@@ -79,7 +79,7 @@ if(!isset($_SESSION['eClave'])){
 		document.getElementById("menu_cabecera_datos").style = "display:inline";
 		document.getElementById("menu_cabecera_cerrar_Session").style = "display:inline";
 		document.getElementById("menu_cabecera_reg_con").style = "display:none";
-		document.getElementById("menu_cabecera_datos").href = "index.php";
+		document.getElementById("menu_cabecera_datos").href = "cambiarDatosI.php";
 		document.getElementById("nombre").style = "display:inline";
 		}
 		</script>
@@ -89,7 +89,7 @@ if(!isset($_SESSION['eClave'])){
 		document.getElementById("menu_cabecera_datos").style = "display:inline";
 		document.getElementById("menu_cabecera_cerrar_Session").style = "display:inline";
 		document.getElementById("menu_cabecera_reg_con").style = "display:inline";
-		document.getElementById("menu_cabecera_datos").href = "index.php";
+		document.getElementById("menu_cabecera_datos").href = "cambiarDatosI.php";
 		document.getElementById("nombre").style = "display:inline";
 		}
 		</script>

@@ -1,6 +1,17 @@
 <?php
 session_start();
  
+if(!isset($_SESSION['eClave']) || isset($_SESSION['iClave'])){
+    header('Location: Error.php');
+    exit;
+} else {
+    // Show users the page!
+}
+?>
+
+<?php
+session_start();
+ 
 if(!isset($_SESSION['eClave'])){
     header('Location: Error.php');
     exit;
