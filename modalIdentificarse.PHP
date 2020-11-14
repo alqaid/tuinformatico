@@ -69,7 +69,7 @@ $("#formautenticacion").submit(function(event){
 		type: request_method,
 		data : form_data
 	}).done(function(response){ 
-	
+			
 	});
 });
 			</script>	
@@ -77,14 +77,15 @@ $("#formautenticacion").submit(function(event){
 <script>
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.onreadystatechange = function() {
+			location.replace("index.php");
 		if (this.readyState == 4 && this.status == 200) {
 			var myObj = JSON.parse(this.responseText);
-			if(myObj.text=="t"){
+			if(myObj=="t"){
 				location.replace("index.php");
 			}else{
 				document.getElementById("Error").innerHTML = "Error al introducir usuario o contraseña";
 			}
 		};	
-		xmlhttp.open("GET", "loginInformatico.php", true);
+		xmlhttp.open("GET", "servicios/loginEmpresaloginInformatico.php", true);
 		xmlhttp.send();
 </script>		

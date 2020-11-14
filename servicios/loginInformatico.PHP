@@ -14,16 +14,16 @@ if (isset($_POST['registro'])) {
     $result = $query->fetch(PDO::FETCH_ASSOC);
 	
     if (!$result) {
-		$myObj->text = "f";
+		$myObj = "f";
     } else {
         if (password_verify($contraseña, $result['iPass'])) {
             $_SESSION['iClave'] = $result['iClave'];
-			$myObj->text = "t";
+			$myObj = "t";
         } else {
-			$myObj->text = "f";
+			$myObj = "f";
         }
     }
-	
+	$myObj = "f";
 	$myJSON = json_encode($myObj);
 	echo $myJSON;
 }
