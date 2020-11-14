@@ -74,19 +74,58 @@
  <?php
 	require('pie.php');
 ?>
-                                        <!-- The Modal -->
+                                     
 					    <div class="modal fade" id="identificacion">
                         <?php
 							require('modalIdentificarse.php');
 							?>
                         </div>
 					
-					<!-- The Modal -->
+					 
                         <div class="modal fade" id="registro">
 						<?php
 							require('modalRegistro.php');
 							?>
                         </div>
+
+
+ 
+
+<!-- ------------paneles---------------------------------------------------------------- -->
+	 <!-- The Modal -->
+  <!-- The Modal -->
+  
+    <div class="modal" id="buscarOfertas_php_myModal1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title"  id='buscarOfertas_php_myModal1_title'>--nombre empresa-</h4>
+          <button type="button" class="close" data-dismiss="modal" onclick="f_cancel_accion();">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body"  >
+           <div   id='buscarOfertas_php_myModal1_body'>---contenido---</div>        
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal" onclick="f_cancel_accion();">Cerrar</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+   
+<!-- -----------FIN -paneles---------------------------------------------------------------- -->
+
+
+
+
+
 
 <script>
   addEventListener('load',inicio,false);
@@ -139,7 +178,7 @@
  
 </script> 	
 <script>
-// formulario
+// formulario envío JQUERY
 
 
 $("#form1").submit(function(event){
@@ -162,7 +201,39 @@ $("#form1").submit(function(event){
 }); 
 </script>	
 <script>	
+	// activa en el menu navegación el correspondiente como ACTIVO
 	document.getElementById("menu_cabecera_bus_oft").className  = "nuestromenus_activado";				
+</script>
+<script>
+	// LLAMADA A LA FUNCION DE ABRIR EL MODAL DE DETALLES
+	function f_abrirOferta(claveServicio)  {    
+		// ajax consultar UN SERVICIO
+			var xhttp = new XMLHttpRequest();
+			  xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+				  var xmlDoc = this.responseXML;
+				  var x = xmlDoc.getElementsByTagName("servicios");
+				  document.getElementById("buscarOfertas_php_myModal1_title").innerHTML =  x[0].getElementsByTagName("nombre_empresa")[0].nodeValue;
+				  document.getElementById("buscarOfertas_php_myModal1_body").innerHTML = x[0].getElementsByTagName("asunto")[0].nodeValue;
+				  
+				  console.log('RESPUESTA XML OK');
+				}
+			  };
+			  xhttp.open("GET", "servicios/xml_servicio_x_clave.php?clave=" + claveServicio, true);
+			  xhttp.send();
+		
+	
+	// MOSTRAR EL SERVICIO
+		 	  document.getElementById('buscarOfertas_php_myModal1').style.display='block';
+			  document.getElementById('buscarOfertas_php_myModal1').style.opacity=1;
+			  document.getElementById('cabecera_php_contenedor').style.opacity=0.3; 
+    }	
+
+function f_cancel_accion()  {    
+		 	  document.getElementById('buscarOfertas_php_myModal1').style.display='none';
+			  document.getElementById('buscarOfertas_php_myModal1').style.opacity=1;
+			  document.getElementById('cabecera_php_contenedor').style.opacity=1; 
+    }		
 </script>	
                             </body>
                             </html>

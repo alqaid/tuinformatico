@@ -34,7 +34,7 @@ if(isset($_SESSION['autenticado']) && $_SESSION['autenticado']!='') {
 				$conexPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 					
 				//----OK conexión --- PREPARAR SENTENCIA
-				$sql='SELECT sAsunto,eNombre from empresas,servicios where eClave=seClaveEmpresa ' . $where1 .    $where2  . $where3 . ' order by sclave desc';
+				$sql='SELECT sAsunto,eNombre,sClave from empresas,servicios where eClave=seClaveEmpresa ' . $where1 .    $where2  . $where3 . ' order by sclave desc';
 				$sentencia = $conexPDO->prepare($sql);
 				 		
 				$res = $sentencia->execute($array_where);
@@ -50,7 +50,7 @@ if(isset($_SESSION['autenticado']) && $_SESSION['autenticado']!='') {
 									<div class="card-body">
 										<h4 class="card-title ">' . $fila[1] . '</h4>
 										<p class="card-text">' . $fila[0] . '</p>
-										<a onclick="alert("Es necesario autentificarse para poder acceder a esa información, si no tienes cuenta hazte pulsando en Registrar")" class="btn btn-success">ver más</a>
+										<button  class="btn btn-success" id="oferta' .   $fila[2]  . '" style="visibility:visible;" type="button" onclick="f_abrirOferta(' .   $fila[2]  . ')">ver más</button> 
 									</div>
 								</div>';
 						
