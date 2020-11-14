@@ -83,8 +83,5 @@ Para realizar el registro debe rellenar la siguiente información sobre la Empre
 							require('modalRegistro.php');
 							?>
                         </div>
-<script>	
-	document.getElementById("menu_cabecera_reg_emp").className  = "nuestromenus_activado";				
-</script>						
                             </body>
                             </html>

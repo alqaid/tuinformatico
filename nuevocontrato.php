@@ -1,3 +1,14 @@
+<?php
+session_start();
+ 
+if(!isset($_SESSION['eClave'])){
+    header('Location: Error.php');
+    exit;
+} else {
+    // Show users the page!
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
