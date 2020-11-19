@@ -15,6 +15,6 @@ try {
 	
    
 } catch (Exception $e) {
-  die('Connect Error: ' . $e->errorMessage());
+  die('Error de conexión: ' . $e->errorMessage());
 }
 ?>
