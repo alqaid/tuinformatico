@@ -1,14 +1,3 @@
-<?php
-session_start();
- 
-if(isset($_SESSION['eClave']) || isset($_SESSION['iClave'])){
-    header('Location: Error.php');
-    exit;
-} else {
-    // Show users the page!
-}
-?>
-
 <!-- The Modal -->
                     <DIV ALIGN=center>
                             <div class="modal-dialog modal-dialog-centered">
@@ -49,7 +38,7 @@ if(isset($_SESSION['eClave']) || isset($_SESSION['iClave'])){
                                     </div>
 
                                     <!-- Modal body -->
-									<p id="Error" class="bg-warning"></p>
+									<!--<p id="Error" class="bg-warning"></p> -->
                                     <div class="modal-body" >
                                         <form id="formautenticacion" method="POST" action="servicios/loginInformatico.PHP">
                                             <label for="e">Email:</label><br>
@@ -66,7 +55,7 @@ if(isset($_SESSION['eClave']) || isset($_SESSION['iClave'])){
                            </div>
                     </DIV>	
 					
-			<script>
+			<!--<script>
 $("#formautenticacion").submit(function(event){
 	console.log(" probando identificación ");
 	
@@ -88,4 +77,4 @@ $("#formautenticacion").submit(function(event){
 			}
 	});
 });
-			</script>	
+			</script>	-->

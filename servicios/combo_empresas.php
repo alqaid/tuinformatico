@@ -11,7 +11,7 @@ if(isset($_SESSION['autenticado'])) {
 	if ($mysqli->connect_errno) {
 		die('Connect Error: ' . $mysqli->connect_errno);
 	}else{
-		echo "<!----conexion ok ------>";
+		echo "<!----conexion ok -->";
 	}
 	
 	

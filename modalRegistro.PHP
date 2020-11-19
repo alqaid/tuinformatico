@@ -1,13 +1,3 @@
-<?php
-session_start();
- 
-if(isset($_SESSION['eClave']) || isset($_SESSION['iClave'])){
-    header('Location: Error.php');
-    exit;
-} else {
-    // Show users the page!
-}
-?>
                     <!-- The Modal -->
                     <DIV ALIGN=center>
                             <div class="modal-dialog modal-dialog-centered">
@@ -30,4 +20,4 @@ if(isset($_SESSION['eClave']) || isset($_SESSION['iClave'])){
 										</form>	
                                     </div>
                                 </div>
-                        </div>
+                        </div> </div>

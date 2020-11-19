@@ -1,5 +1,19 @@
+﻿<?php
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+if (!isset($_SESSION['eClave']) && isset($_COOKIE['eClave'])) {
+    $_SESSION['eClave'] = $_COOKIE['eClave'];
+    $_SESSION['eNombre'] = $_COOKIE['eNombre'];
+} else if (!isset($_SESSION['iClave']) && isset($_COOKIE['iClave'])) {
+    $_SESSION['iClave'] = $_COOKIE['iClave'];
+    $_SESSION['iNombre'] = $_COOKIE['iNombre'];
+}
+?>
+    
 <!DOCTYPE html>
-<html lang="en">
 <head>
 <title>TU INFORMÁTICO - NUEVO CONTRATO</title>
 <?php
@@ -93,7 +107,7 @@
 
 <!-- ------------paneles---------------------------------------------------------------- -->
 	 <!-- The Modal -->
-  <!-- The Modal -->
+  <!-- DESCRPCIÓN DE LA OFERTA -->
   
     <div class="modal" id="buscarOfertas_php_myModal1">
     <div class="modal-dialog">
@@ -112,7 +126,8 @@
         
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-success" data-dismiss="modal" onclick="f_cancel_accion();">Cerrar</button>
+		  <button type="button" class="btn btn-success" data-dismiss="modal" onclick="f_cancel_accion();">Unirse</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="f_cancel_accion();">Cerrar</button>
         </div>
         
       </div>
@@ -212,9 +227,21 @@ $("#form1").submit(function(event){
 			  xhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
 				  var xmlDoc = this.responseXML;
-				  var x = xmlDoc.getElementsByTagName("servicios");
-				  document.getElementById("buscarOfertas_php_myModal1_title").innerHTML =  x[0].getElementsByTagName("nombre_empresa")[0].nodeValue;
-				  document.getElementById("buscarOfertas_php_myModal1_body").innerHTML = x[0].getElementsByTagName("asunto")[0].nodeValue;
+				  
+				  document.getElementById("buscarOfertas_php_myModal1_title").innerHTML = xmlDoc.getElementsByTagName('nombre_empresa')[0].childNodes[0].nodeValue;
+				  var asunto='<p>' +  xmlDoc.getElementsByTagName('asunto')[0].childNodes[0].nodeValue + '</p>';
+				  asunto += '<p><b>Publicado:</b> ' +  xmlDoc.getElementsByTagName('fecha_inicio')[0].childNodes[0].nodeValue + '</p>';
+				  asunto += '<p><b>Límite inscripción:</b> <span style="color:red">' +  xmlDoc.getElementsByTagName('fecha_fin')[0].childNodes[0].nodeValue + '</span></p>';
+				  asunto += '<p><b>Salario orientativo:</b> ' +  xmlDoc.getElementsByTagName('salario')[0].childNodes[0].nodeValue + ' €</p>';
+				  asunto += '<p>' +  xmlDoc.getElementsByTagName('descripcion')[0].childNodes[0].nodeValue + '</p>';
+				  
+				  if(xmlDoc.getElementsByTagName('candidatos')[0].childNodes[0].nodeValue > 0 ){
+					   asunto += '<p><b>'  +  xmlDoc.getElementsByTagName('candidatos')[0].childNodes[0].nodeValue + ' candidatos unidos a esta oferta.</b></p>';
+				  }else{
+					  asunto += '<p><b>Nadie se ha unido aún<span style="color:red"> ¡Sé el primero!</span></p>';
+				  }
+				  
+				  document.getElementById("buscarOfertas_php_myModal1_body").innerHTML = asunto;
 				  
 				  console.log('RESPUESTA XML OK');
 				}

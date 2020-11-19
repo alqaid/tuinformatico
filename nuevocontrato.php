@@ -1,34 +1,33 @@
 <?php
-session_start();
- 
-if(!isset($_SESSION['eClave']) || isset($_SESSION['iClave'])){
-    header('Location: Error.php');
-    exit;
-} else {
-    // Show users the page!
-}
-?>
 
-<?php
-session_start();
- 
-if(!isset($_SESSION['eClave'])){
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+if (!isset($_SESSION['eClave']) && isset($_COOKIE['eClave'])) {
+    $_SESSION['eClave'] = $_COOKIE['eClave'];
+    $_SESSION['eNombre'] = $_COOKIE['eNombre'];
+} else if (!isset($_SESSION['iClave']) && isset($_COOKIE['iClave'])) {
+    $_SESSION['iClave'] = $_COOKIE['iClave'];
+    $_SESSION['iNombre'] = $_COOKIE['iNombre'];
+}
+
+if (!isset($_SESSION['eClave']) || isset($_SESSION['iClave'])) {
     header('Location: Error.php');
     exit;
-} else {
-    // Show users the page!
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<title>TU INFORMÁTICO - NUEVO CONTRATO</title>
-<?php
-	require('head.php'); 
-?>
+    <head>
+        <title>TU INFORMÁTICO - NUEVO CONTRATO</title>
+        <?php
+        require('head.php');
+        ?>
 
 
+      
 <script>
   addEventListener('load',inicio,false);
   
@@ -72,7 +71,7 @@ if(!isset($_SESSION['eClave'])){
 
   $(document).ready(function(){
 	 // JQUERY
-	//AL CARGAR TODA LA PÁGINA, DESPUES.....  
+	//AL CARGAR TODA LA P�GINA, DESPUES.....  
 	  
 	 
 	
@@ -81,13 +80,14 @@ if(!isset($_SESSION['eClave'])){
 });
 </script>  
 
- 
 
-</head>
-<body>
-<?php
-	require('cabecera.php');
-?>
+
+    </head>
+    <body>
+        <?php
+        require('cabecera.php');
+        ?>
+       
 <main class=" col-9 "   >
 <!-- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----  -->
 <!-- SITIO LIBRE PARA INCLUIR -->
@@ -132,7 +132,7 @@ if(!isset($_SESSION['eClave'])){
 	 
 	<div id="caja_success" class="alert alert-success alert-dismissible">
 		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-		<strong>¡Aceptado!</strong> <spam id="respuestaok"><spam>
+		<strong>!Aceptado!</strong> <spam id="respuestaok"><spam>
 	</div>
 	<div id="caja_warning" class="alert alert-warning alert-dismissible">
 		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -174,7 +174,7 @@ $(document).ready(function(){
 });		 
 </script>			
 <script>
-//OBLIGATORIO IR AL FINAL ESTE CÓDIGO O RESCRIBIE LA PÁGINA
+//OBLIGATORIO IR AL FINAL ESTE C�DIGO O RESCRIBIE LA P�GINA
 
 
 
@@ -215,6 +215,6 @@ $("#form1").submit(function(event){
 </script>
 <script>	
 	document.getElementById("menu_cabecera_reg_con").className  = "nuestromenus_activado";				
-</script>					
-                            </body>
-                            </html>
+</script>						
+                                                        </body>
+                                                        </html>

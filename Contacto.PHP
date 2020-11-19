@@ -1,3 +1,18 @@
+<?php
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+if (!isset($_SESSION['eClave']) && isset($_COOKIE['eClave'])) {
+    $_SESSION['eClave'] = $_COOKIE['eClave'];
+    $_SESSION['eNombre'] = $_COOKIE['eNombre'];
+} else if (!isset($_SESSION['iClave']) && isset($_COOKIE['iClave'])) {
+    $_SESSION['iClave'] = $_COOKIE['iClave'];
+    $_SESSION['iNombre'] = $_COOKIE['iNombre'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
