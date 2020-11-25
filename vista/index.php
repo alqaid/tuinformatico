@@ -44,13 +44,26 @@ if (!isset($_SESSION['eClave']) && isset($_COOKIE['eClave'])) {
 <!-- FIN SITIO LIBRE PARA INCLUIR -->
 </main> <!-- class="container" -->
 	<aside class=" col-3 "   > <!-- BANNER -->
-		<h2>Compartenos en tus redes sociales<h2>
-		<a href="https://twitter.com/?lang=es">
-		<img   src="images/twitter.png" alt=""  width="100%" height="520px">
+		<h2>Compartenos en tus redes sociales<h2><br>
+		<a href="https://www.facebook.com/sharer/sharer.php?u=https://tuinformatico.com">
+		<img   src="images/logo_facebook.png" alt=""  width="75px" height="75px">
+		</a>
+		<a href="https://twitter.com/intent/tweet?text=&url=https://tuinformatico.com&hashtags=tuinformatico">
+		<img   src="images/logo_twitter.jpg" alt=""  width="75px" height="75px">
+		</a>
+		<a href="https://api.whatsapp.com/send?text=Encuentra a tu informatico en este enlace: https://tuinformatico.com">
+		<img   src="images/logo_whatsapp.png" alt=""  width="75px" height="75px">
 		</a>
 	</aside> <!-- FIN BANNER -->
+	<aside class=" col-3 "   >
+	<br><br>
+		<a class="navbar-brand " data-toggle="tooltip"><?php echo $mensaje; ?></a><br><br>
+		<a class="navbar-brand " data-toggle="tooltip"><?php echo $mensaje2; ?></a>
+		<a class="navbar-brand " data-toggle="tooltip"><?php echo $mensaje3; ?></a><br><br>
+		</aside>
  <?php
-	require('../controlador/pieConCookieVisitas.php');
+	require('pie.php');
+	//require('../controlador/pieConCookieVisitas.php');
 ?>
                                         <!-- The Modal -->
 					    <div class="modal fade" id="identificacion">

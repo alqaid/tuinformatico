@@ -57,7 +57,7 @@ $mail->MsgHTML($body);
 //$mail->AddAttachment("images/phpmailer_mini.gif"); // attachment
 
 if(!$mail->Send()) {
- $mensaje_Devolucion='¡ERROR EN EL ENVÍO!. ' . $mail->ErrorInfo;
+ $mensaje_Devolucion='¡ERROR EN EL ENVÍO!. <BR>' . $mail->ErrorInfo;
 } else {
   $mensaje_Devolucion='¡Mensaje enviado correctamente!. En breve recibirá una respuesta';
 }

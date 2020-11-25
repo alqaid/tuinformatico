@@ -4,7 +4,7 @@
     <div class="collapse navbar-collapse" id="navbarText">
         <p id="textopie" class="text-white "></p>
     </div>
-    <a class="navbar-brand " data-toggle="tooltip"><?php if (isset($mensaje)) echo $mensaje; ?></a>
+	<a class="navbar-brand " href="descripcion.php" data-toggle="tooltip" title="Para que sirve esta web?!">Que hacemos</a>
     <a class="navbar-brand " href="Conocenos.php" data-toggle="tooltip" title="Conocenos!">Quienes somos</a>
     <a class="navbar-brand " href="Contacto.php" data-toggle="tooltip" title="Contactanos!">Contacto</a>
 </div>
