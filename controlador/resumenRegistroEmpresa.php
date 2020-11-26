@@ -21,7 +21,7 @@ if(isset($_SESSION['eClave']) || isset($_SESSION['iClave'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>TU INFORM√?TICO - NUEVO CONTRATO</title>
+<title>TU INFORM√ÅTICO - NUEVO CONTRATO</title>
 <?php
 	require('../vista/head.php');
 ?>
@@ -47,7 +47,7 @@ if(isset($_SESSION['eClave']) || isset($_SESSION['iClave'])){
 			$password_hash = password_hash($password, PASSWORD_DEFAULT);
 			$provincia = $_POST["provincia"];
 			 $sql = "INSERT INTO empresas (eCIF, eCP, eEmail, eMunicipio, eNombre, ePais, ePass, eProvincia, eFundacion) 
-						VALUES ('$cif','$cp','$email','$municipio','$nombre','$pais','$password_hash','$provincia', $F)";
+						VALUES ('$cif','$cp','$email','$municipio','$nombre','$pais','$password_hash','$provincia', '$F')";
 			if ($mysqli->query($sql) === TRUE) {
 			  echo "Nuevo Registro Creado";
 			} else {
@@ -64,8 +64,8 @@ CIF: <?php echo $_POST['cif'] ?> <br>
 Municipio: <?php echo $_POST['municipio'] ?> <br>
 Fecha de fundacion: <?php echo $_POST['birthday'] ?> <br>
 Provincia: <?php echo $_POST['provincia'] ?> <br>
-CÛdigo postal: <?php echo $_POST['cp'] ?> <br>
-PaÌs: <?php echo $_POST['pais'] ?> <br><br>
+C√≥digo postal: <?php echo $_POST['cp'] ?> <br>
+Pass: <?php echo $_POST['pais'] ?> <br><br>
 
 Para salir pulse en terminar: <br>
 <form action="index.php">
