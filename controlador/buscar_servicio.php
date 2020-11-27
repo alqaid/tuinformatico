@@ -1,10 +1,8 @@
 <?php
-session_start();
+//session_start();
 
-// QUITAR CUANDO EXISTA AUTENTICACIÓN
-$_SESSION['autenticado']  = 'autenticado';
-
-if(isset($_SESSION['autenticado']) && $_SESSION['autenticado']!='') {
+ 
+//if(isset($_SESSION['eClave']) && $_SESSION['eNombre']!='') {
 		$where1="";
 		$where2="";
 		$where3="";
@@ -51,10 +49,10 @@ if(isset($_SESSION['autenticado']) && $_SESSION['autenticado']!='') {
 									<img class="card-img-top" src="../vista/images/oferta.png" alt="Card image" style="width:100%">
 									<div class="card-body">
 										<h4 class="card-title ">' . $fila[1] . '</h4>
-										<p class="card-text">' . $fila[0] . '</p>
-										<button  class="btn btn-success" id="oferta' .   $fila[2]  . '" style="visibility:visible;" type="button" onclick="f_abrirOferta(' .   $fila[2]  . ')">ver más</button> 
-									</div>
-								</div>';
+										<p class="card-text">' . $fila[0] . '</p>';
+										
+					$cards .=					'<button  class="btn btn-success" id="oferta' .   $fila[2]  . '" style="visibility:visible;" type="button" onclick="f_abrirOferta(' .   $fila[2]  . ')">ver más</button> ';
+					$cards .=				'</div></div>';
 						
 						$rows  =$rows+ 1;
 				 	if ($rows>=3){
@@ -79,14 +77,14 @@ if(isset($_SESSION['autenticado']) && $_SESSION['autenticado']!='') {
 				die('Error:'.$e->GetMessage());
 			}
 		
-}else{
-		//$statusCode='500';
-		//header('Location: ../index.php');
-		echo "No autenticado";
-		//echo '{"success":"0","respuesta":"No autenticado"}';
+//}else{
+	//	//$statusCode='500';
+	//	//header('Location: ../index.php');
+	//	echo "No autenticado";
+	//	////echo '{"success":"0","respuesta":"No autenticado"}';
 		
 		
-	}
+	//}
 
  
 ?>	   
