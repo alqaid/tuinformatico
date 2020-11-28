@@ -58,6 +58,7 @@ if (!isset($_SESSION['eClave']) && isset($_COOKIE['eClave'])) {
                 PARA CAMBIAR EN ENLACE ACTIVO-->
         <li><a id="menu_cabecera_home" href="../vista/index.php">Informaticos</a></li>
         <li><a id="menu_cabecera_bus_oft" href="../vista/buscarofertas.php">Ofertas</a></li>
+        <li id="menu_cabecera_mis_oft" style="display:none;"><a  href="../vista/misOfertas.php">Mis Ofertas</a></li>
         <li id="menu_cabecera_reg_con" style="display:none;"><a href="../vista/nuevocontrato.php">Nueva Oferta</a></li>
         <li id="menu_cabecera_datos" style="display:none"><a id="menu_cabecera_datos_text" href="#">Cambiar datos</a></li>
         <li id="menu_cabecera_cerrar_Session" style="display:none"><a href="../controlador/cerrarSesion.PHP">Cerrar sesion</a></li>
@@ -67,6 +68,7 @@ if (!isset($_SESSION['eClave']) && isset($_COOKIE['eClave'])) {
             echo "<script> document.getElementById('menu_cabecera_datos').style.display = 'initial'; </script>";
             echo "<script> document.getElementById('menu_cabecera_datos_text').href = '../vista/cambiarDatosE.php'; </script>";
             echo "<script> document.getElementById('menu_cabecera_reg_con').style.display = 'initial'; </script>";
+            echo "<script> document.getElementById('menu_cabecera_mis_oft').style.display = 'initial'; </script>";
             echo "<script> document.getElementById('menu_cabecera_cerrar_Session').style.display = 'initial'; </script>";
             echo "<script> document.getElementById('registrate').style.display = 'none'; </script>";
             echo "<script> document.getElementById('identificate').style.display = 'none'; </script>";
@@ -74,6 +76,7 @@ if (!isset($_SESSION['eClave']) && isset($_COOKIE['eClave'])) {
         } else if (isset($_SESSION['iClave'])) {
             echo "<script> document.getElementById('menu_cabecera_datos').style.display = 'initial'; </script>";
             echo "<script> document.getElementById('menu_cabecera_datos_text').href = '../vista/cambiarDatosI.php'; </script>";
+            echo "<script> document.getElementById('menu_cabecera_mis_oft').style.display = 'initial'; </script>";
             echo "<script> document.getElementById('menu_cabecera_reg_con').style.display = 'none'; </script>";
             echo "<script> document.getElementById('menu_cabecera_cerrar_Session').style.display = 'initial'; </script>";
             echo "<script> document.getElementById('registrate').style.display = 'none'; </script>";

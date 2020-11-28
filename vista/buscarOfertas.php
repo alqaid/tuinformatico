@@ -132,7 +132,7 @@ if (!isset($_SESSION['eClave']) && isset($_COOKIE['eClave'])) {
         
         <!-- Modal footer -->
         <div class="modal-footer">
-		  <button type="button" class="btn btn-success" data-dismiss="modal" onclick="f_cancel_accion();">Unirse</button>
+		  <div id="buscarOfertas_php_myModal1_button_unirse"></div><!-- aquí irá el boton UNIRSE -->		  
           <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="f_cancel_accion();">Cerrar</button>
         </div>
         
@@ -248,7 +248,9 @@ $("#form1").submit(function(event){
 				  }
 				  
 				  document.getElementById("buscarOfertas_php_myModal1_body").innerHTML = asunto;
-				  
+				 // document.getElementById("buscarOfertas_php_myModal1_button_unirse").innerHTML = "<button type='button'  class='btn btn-success' data-dismiss='modal' onclick='f_URL(" + claveServicio + ",'9999);' >Unirse</button>";
+				  document.getElementById("buscarOfertas_php_myModal1_button_unirse").innerHTML = '<button type="button"  class="btn btn-success" data-dismiss="modal" onclick="f_URL(' + claveServicio + ',\'' + xmlDoc.getElementsByTagName('asunto')[0].childNodes[0].nodeValue + '\');" >Unirse</button>';
+				 
 				  console.log('RESPUESTA XML OK');
 				}
 			  };
@@ -266,7 +268,12 @@ function f_cancel_accion()  {
 		 	  document.getElementById('buscarOfertas_php_myModal1').style.display='none';
 			  document.getElementById('buscarOfertas_php_myModal1').style.opacity=1;
 			  document.getElementById('cabecera_php_contenedor').style.opacity=1; 
-    }		
+    }
+
+function f_URL(claveServicio,asuntoServicio) {
+	location.href = 'misOfertas.php?metodo=unirse&clave=' + claveServicio + '&asunto=' + asuntoServicio;
+   // location.href = 'metodos.php?metodo=unirse&clave=' + claveServicio + '&asunto=';
+}			
 </script>	
                             </body>
                             </html>
