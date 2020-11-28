@@ -1,5 +1,4 @@
 <?php
 //branch angel
-	header('Location: vista/index.php');
- 
+	header('Location: vista/index.php'); 
 ?>
