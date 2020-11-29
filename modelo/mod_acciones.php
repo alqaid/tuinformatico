@@ -1,6 +1,7 @@
 <?php
 /*
 	-- SELECTS -------
+	vista($vista,$campos,$where,$order) -->  consulta cualquiera
 	listado_vista($listado,$clave) ---> devuelve SELECTS
 	select_contar($tabla,$where)  --> CUENTA REGISTROS
 
@@ -51,6 +52,54 @@ function select_contar($tabla,$where){
 }
 // --------------------- *** ----------------- *** ----------------------------------------
 // --------------------- *** ----------------- *** ----------------------------------------
+function vista($vista,$campos,$where,$order){   
+	$mensaje='-msg-001.-';
+	$sql = '';
+	$camposS = '*';
+	$whereS = '';
+	$orderS = '';
+	if (isset($campos)) 		$camposS = $campos;
+	if (isset($where)) 		$whereS = $where;
+	if (isset($order)) 		$orderS = $order;
+	
+	//echo $campos .' ' .$where .' ' .$order ;
+	
+	switch ($vista) {
+		case 'cantidatosXoferta':
+			$sql = "SELECT  $camposS
+					FROM informaticos,servicios,candidatos 
+					WHERE ciClaveInformaticos=iClave and csClaveServicio=sClave
+					$whereS 
+					ORDER BY $orderS";			 
+			break;
+		case 'contratarinformatico':
+				$sql = "SELECT  $camposS
+						FROM informaticos,servicios,candidatos 
+						WHERE ciClaveInformaticos=iClave and csClaveServicio=sClave
+						$whereS 
+						ORDER BY $orderS";			 
+				break;
+		default:
+			# code...
+			break;
+	}
+	//echo $sql;
+	if($sql!=''){			
+			$mysqli=conexion();		 
+			if ($resultado = $mysqli->query($sql)) {
+				$ARRAY =array();
+				while($fila = $resultado->fetch_assoc()){				
+				//BUCLE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++					 
+					$ARRAY[]=$fila;
+				//   FIN BUCLE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++				 
+				}
+				return $ARRAY;
+			}
+			$mysqli->close();
+		} 
+
+	 // retornamos null si no hay sql
+}
 // --------------------- *** ----------------- *** ----------------------------------------
 function listado_vista($listado,$clave){   
 	$mensaje='-msg-001.-';

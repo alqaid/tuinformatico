@@ -10,10 +10,17 @@ require('../modelo/mod_acciones.php');
         limpiarCaracteres( string ) --> devuelve limpico
         permitirSoloLetrasNumeros( string ) --> devuelve vacio si no es letra o numero
         permitirSoloNumeros( string ) --> devuelve vacio si no es letra o numero
+
+    OTRO:
+        VerificarPagoPAYPAL(SESION,CLAVEDEVUELTA)
 */
 // --------------------- *** ----------------- *** ----------------------------------------
-function contr_listar($listado,$clave){
+function contr_listar($listado_,$clave_,$clave2_){
     //SELECT cFechaUnion,eNombre, sAsunto, sFechaFinPublicacion FROM candidatos,servicios,empresas WHERE csClaveservicio=sClave and seClaveEmpresa=eClave and ciClaveInformaticos=33
+    $listado=permitirSoloLetrasNumeros($listado_);
+    $clave=permitirSoloNumeros($clave_);
+    $clave2=permitirSoloNumeros($clave2_);
+    //echo $listado .' ' .$clave .' ' .$clave1 ;
     switch ($listado) {
         case 'serviciosXinformaticos':
             if (is_numeric($clave)){               
@@ -27,6 +34,26 @@ function contr_listar($listado,$clave){
                     return $ARRAY;
                 }
                 break;
+        case 'cantidatosXoferta':           
+                if (is_numeric($clave) && is_numeric($clave2)){            
+                        $campos="cFechaUnion,iNombre,iTelefono,iEmail,iDescripcionCorta,sClave,iClave"; //
+                        $where="and seClaveEmpresa=" . $clave2 . " and csClaveServicio=" . $clave;
+                        $order="cFechaUnion ASC";
+                        //echo 'cantidatosXoferta: ' . $campos .' ' .$where .' ' .$order ;
+                        $ARRAY=vista($listado,$campos,$where,$order);
+                        return $ARRAY;
+                    }
+                break;     
+        case 'contratarinformatico':           
+            if (is_numeric($clave) && is_numeric($clave2)){            
+                    $campos="iNombre,iTelefono,iEmail,iDescripcionCorta,sSalario,sClave,iClave,iDNI"; //
+                    $where="and iClave=" . $clave . " and csClaveServicio=" . $clave2;
+                    $order="cFechaUnion ASC";
+                    //echo 'cantidatosXoferta: ' . $campos .' ' .$where .' ' .$order ;
+                    $ARRAY=vista($listado,$campos,$where,$order);
+                    return $ARRAY;
+                }
+            break;    
         default:
             
             break;
@@ -72,6 +99,16 @@ function contr_contarRegistros($tipo,$claveServicio){
     }
 }
 // --------------------- *** ----------------- *** ----------------------------------------
+function VerificarPagoPAYPAL($clave1,$clave2){
+    $mensaje= "";
+    $clave1v=permitirSoloNumeros($clave1);
+    $clave2v=permitirSoloNumeros($clave2);
+    if ($clave1v == $clave2v){
+        $mensaje= "OK";
+    }
+    return $mensaje;
+}
+
 // --------------------- *** ----------------- *** ----------------------------------------
 // --------------------- *** ----------------- *** ----------------------------------------
 // --------------------- *** ----------------- *** ----------------------------------------

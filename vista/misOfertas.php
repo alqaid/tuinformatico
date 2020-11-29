@@ -22,14 +22,15 @@ if ((isset($_SESSION['rol'])) && ($_SESSION['rol']=='empresa')) {
     </thead>
     <tbody>";
  
-	$ARRAY = contr_listar('serviciosXempresas',$_SESSION['eClave']);	
+	$ARRAY = contr_listar('serviciosXempresas',$_SESSION['eClave'],null);	
 	if (isset($ARRAY)){
 	   foreach ($ARRAY as $REGISTRO ){
 			$candidatos=contr_contarRegistros('candidatosXoferta',$REGISTRO['sClave']);
-
+			$asunto='"' . $REGISTRO['sAsunto'] .'"';
+			$sClave=$REGISTRO["sClave"];
 			 $mensaje.= "<tr><td>".$REGISTRO['sFechaFinPublicacion']."</td><td>".$REGISTRO['sFechaPublicacion']."</td><td>".$REGISTRO['sAsunto']."</td><td>".$REGISTRO['sDescripcion']."</td><td>".$REGISTRO['sSalario']."€</td>";	        	
 			 $mensaje.= "<td>" . $candidatos . "</td>";
-			 $mensaje.= "<td><button type='button' class='btn btn-success'>Contratar</button></td></tr>";
+			 $mensaje.= "<td><button type='button' class='btn btn-success' onClick='fverCandidatos($sClave,$asunto);'>Contratar</button></td></tr>";
 			}
 		}
 	$mensaje.= "</tbody>		</table> ";
@@ -85,7 +86,7 @@ if ((isset($_SESSION['rol'])) && ($_SESSION['rol']=='empresa')) {
     </thead>
     <tbody>";
 
-	$ARRAY = contr_listar('serviciosXinformaticos',$_SESSION['iClave']);	
+	$ARRAY = contr_listar('serviciosXinformaticos',$_SESSION['iClave'],null);	
 	if (isset($ARRAY)){
 	   foreach ($ARRAY as $REGISTRO ){
 			 $mensaje.= "<tr><td>".$REGISTRO['cFechaUnion']."</td><td>".$REGISTRO['eNombre']."</td><td>".$REGISTRO['sAsunto']."</td><td>".$REGISTRO['sFechaFinPublicacion']."</td></tr>";	        	
@@ -149,5 +150,10 @@ if ((isset($_SESSION['rol'])) && ($_SESSION['rol']=='empresa')) {
 							require('modalRegistro.php');
 							?>
                         </div>
+<script>
+	function fverCandidatos(claveOferta,oferta){
+		location.href = 'misOfertasCandidatos.php?oferta=' + claveOferta + '&ofertadescripcon=' + oferta; 
+	}
+</script>						
                             </body>
                             </html>
