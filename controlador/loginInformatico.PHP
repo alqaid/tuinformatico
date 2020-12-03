@@ -35,10 +35,6 @@ if ($_POST["g-recaptcha-response"]) {
 // --------------------------------------------------------------------------
 // --------------------------------------------------------------------------
 // --------------------------------------------------------------------------
-?>
-
-
-<?php
 
 include('../modelo/config.php');
 if (!isset($_SESSION)) {
@@ -58,11 +54,10 @@ if (isset($_SESSION['eClave']) || isset($_SESSION['iClave'])) {
     exit;
 }
 
-if (isset($_POST['registro'])) {
+//if (isset($_POST['registro'])) {
 
     $email = $_POST['email'];
     $contraseña = $_POST['contraseña'];
-    $yolo = password_hash($contraseña, PASSWORD_DEFAULT);
 
     $query = $conexPDO->prepare("SELECT * FROM informaticos WHERE iEmail='" . $email . "'");
     $query->execute();
@@ -70,26 +65,26 @@ if (isset($_POST['registro'])) {
     $result = $query->fetch(PDO::FETCH_ASSOC);
 
     if (!$result) {
-        echo "<script> window.location='../vista/registroInformatico.php'; </script>";
+		echo '{"success":"0"}';
     } else {
         if (password_verify($contraseña, $result['iPass'])) {
             $_SESSION['iClave'] = $result['iClave'];
             $_SESSION['iNombre'] = $result['iNombre'];
-			$_SESSION['rol'] = 'informatico';
 			if(isset($_POST['recuerda'])){
             setcookie('iClave', $_SESSION['iClave'], time() + 3600 * 24,'/');
             setcookie('iNombre', $_SESSION['iNombre'], time() + 3600 * 24,'/');
 			}
-            echo "<script> window.location='../vista/index.php'; </script>";
+			echo '{"success":"1"}';
         } else {
-            echo "<script> window.location='../vista/registroInformatico.php'; </script>";
+			echo '{"success":"0"}';
         }
     }
+/*}else{
+	echo '{"success":"0"}';
 }
-?>
-<?php
+*/
 }else{
-	  echo "<script> window.location='../vista/registroInformatico.php'; </script>";
+echo '{"success":"0"}';
   }
 
 ?>

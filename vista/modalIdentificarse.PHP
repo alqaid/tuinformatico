@@ -38,7 +38,7 @@
                                     </div>
 
                                     <!-- Modal body -->
-									<!--<p id="Error" class="bg-warning"></p> -->
+									<p id="Error" class="bg-warning"></p>
                                     <div class="modal-body" >
                                         <form id="formautenticacion" method="POST" action="../controlador/loginInformatico.PHP">
                                             <label for="e">Email:</label><br>
@@ -59,10 +59,8 @@
                     </DIV>	
 
  			
-<!--<script>
+<script>
 $("#formautenticacion").submit(function(event){
-	console.log(" probando identificación ");
-	
 	event.preventDefault(); //prevent default action 
 	var post_url = $(this).attr("action"); //get form action url
 	var request_method = $(this).attr("method"); //get form GET/POST method
@@ -74,11 +72,11 @@ $("#formautenticacion").submit(function(event){
 		data : form_data
 	}).done(function(response){ 
 		var myObj = JSON.parse(response);
-			if(myObj.age==40){
-				location.replace("index.php");
-			}else{
+			if(myObj.success == "0"){
 				document.getElementById("Error").innerHTML = "Error al introducir usuario o contraseña";
+			}else{
+				location.reload();
 			}
 	});
 });
-			</script>	-->
+			</script>

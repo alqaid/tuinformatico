@@ -35,7 +35,7 @@ if(!isset($_SESSION['eClave']) || isset($_SESSION['iClave'])){
 
 <?php		
 			echo "<!----conetando-->";
-				require('../modelo/conexion_mysql.php');
+			require('../modelo/conexion_mysql.php');
 			$cif = $_POST["cif"];
 			$cp = $_POST["cp"];
 			$email = $_POST["correo"];
