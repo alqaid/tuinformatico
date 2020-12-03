@@ -5,7 +5,7 @@ $mensaje="";
 $pago="";
 
 
-if ((isset($_SESSION['rol'])) && ($_SESSION['rol']=='empresa')) { 
+if (isset($_SESSION['eClave'])) {//if ((isset($_SESSION['rol'])) && ($_SESSION['rol']=='empresa')) { 
 
 	if (isset( $_SESSION["clavePAYPAL"]) && isset($_GET["pagoexitoso"]))   { 
         

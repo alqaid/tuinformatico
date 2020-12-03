@@ -2,7 +2,8 @@
 session_start();
 require('../controlador/Acontrolador.php');
 $mensaje="";
-if ((isset($_SESSION['rol'])) && ($_SESSION['rol']=='empresa')) {
+//if ((isset($_SESSION['rol'])) && ($_SESSION['rol']=='empresa')) {
+	if (isset($_SESSION['eClave'])) {
 	// -////////////////////////////////////////////////////-- 
 // -////////////////    EMPRESA    /////////////////-- 
 // -////////////////////////////////////////////////////-- 
@@ -35,7 +36,8 @@ if ((isset($_SESSION['rol'])) && ($_SESSION['rol']=='empresa')) {
 		}
 	$mensaje.= "</tbody>		</table> ";
 
-}elseif(isset($_SESSION['rol']) && ($_SESSION['rol']=='informatico')) {
+}elseif (isset($_SESSION['iClave'])) {   // if(isset($_SESSION['rol']) && ($_SESSION['rol']=='informatico')) {
+	
 // -////////////////////////////////////////////////////-- 
 // -////////////////    INFORMÁTICO    /////////////////-- 
 // -////////////////////////////////////////////////////-- 	

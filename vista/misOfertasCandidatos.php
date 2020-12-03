@@ -2,7 +2,7 @@
 session_start();
 require('../controlador/Acontrolador.php');
 $mensaje="";
-if ((isset($_SESSION['rol'])) && ($_SESSION['rol']=='empresa')) {
+if (isset($_SESSION['eClave'])) {
 	// -////////////////////////////////////////////////////-- 
 // -////////////////    EMPRESA    /////////////////-- 
 // -////////////////////////////////////////////////////-- 

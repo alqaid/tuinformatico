@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 
  
 //if(isset($_SESSION['eClave']) && $_SESSION['eNombre']!='') {
@@ -51,7 +51,13 @@
 										<h4 class="card-title ">' . $fila[1] . '</h4>
 										<p class="card-text">' . $fila[0] . '</p>';
 										
-					$cards .=					'<button  class="btn btn-success" id="oferta' .   $fila[2]  . '" style="visibility:visible;" type="button" onclick="f_abrirOferta(' .   $fila[2]  . ')">ver más</button> ';
+					if (isset($_SESSION['eClave'])) {   //if((isset($_SESSION['rol']) && $_SESSION['rol']=='informatico')) {
+						$cards .=					'<button  class="btn btn-success" id="oferta' .   $fila[2]  . '" style="visibility:visible;" type="button" onclick="f_abrirOferta(' .   $fila[2]  . ')">ver más</button> ';
+					}else {
+						$cards .='<button type="button" class="btn btn-success disabled">ver más</button> ';
+					}
+
+
 					$cards .=				'</div></div>';
 						
 						$rows  =$rows+ 1;

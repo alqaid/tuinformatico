@@ -3,7 +3,7 @@ session_start();
 require('../controlador/Acontrolador.php');
 $mensaje="";
 $pago="";
-if ((isset($_SESSION['rol'])) && ($_SESSION['rol']=='empresa')) { 
+if (isset($_SESSION['eClave'])) {
 
 	if ((isset($_GET['iClave'])) && (isset($_GET['sClave']))) { 
 
@@ -59,7 +59,7 @@ if ($pago==''){
 			
 			<input type="hidden" name="cmd" value="_cart">
 			<input type="hidden" name="upload" value="1">
-			<input type="hidden" name="business" value="xxxx@business.example.com">
+			<input type="hidden" name="business" value="sb-nl7tc3911639@business.example.com">
 			<input type="hidden" name="item_name_1" value="<?php echo $concepto; ?>">
 			<input type="hidden" name="item_number_1" value="<?php echo $sClave; ?>">
 			<input type="hidden" name="amount_1" value="<?php echo $importe; ?>">
