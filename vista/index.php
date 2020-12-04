@@ -1,4 +1,4 @@
-<?php
+Ôªø<?php
 
 if (!isset($_SESSION)) {
     session_start();
@@ -32,6 +32,16 @@ if (!isset($_SESSION['eClave']) && isset($_COOKIE['eClave'])) {
 ?>
 <main class=" col-9 "   >
 <!-- SITIO LIBRE PARA INCLUIR -->
+<div class="col "  ><div class="p-3 border bg-light">
+<h3>¬øEres Empresa?</h3>
+<p>
+Selecciona y contrata los mejores profesionales para tu negocio, contratar a estos profesionales mejorar√° tu producci√≥n.
+</p>
+
+<p>
+<a href="registrarEmpresa.php">Registrat√©</a> y oferta todos los servicios que necesites, los mejores profesionales del sector de las nuevas tecnolog√≠as, se unir√°n como candidatos, la √∫ltima palabra la tienes t√∫.
+</p>
+</div></div><br>
 
 
 <div id="resultadobusqueda">
@@ -55,10 +65,10 @@ if (!isset($_SESSION['eClave']) && isset($_COOKIE['eClave'])) {
 		<img   src="images/logo_whatsapp.png" alt=""  width="75px" height="75px">
 		</a><br><br><br>
 			<img src="images/PublicidadRonaldo.jpg" width="100%" height="50%" usemap="#kfc">
-			<h6>Ronaldo no para de comer el pollo m·s rico del mundo, descubre las mejores ofertas para el pollo m·s crujiente</h6>
+			<h6>Ronaldo no para de comer el pollo m√°s rico del mundo, descubre las mejores ofertas para el pollo m√°s crujiente</h6>
 			<img src="images/cr7kfc.gif" usemap="#kfc">
-			<h6>Con el cÛdigo cr7 puedes conseguir un 50% de descuento en nuestro nuevo men˙: CrujienteR7. °No esperes m·s!</h6>
-			<a target="_blank" href="https://www.kfc.es/" class="more-link">°Sacia tu hambre!</a>
+			<h6>Con el c√≥digo cr7 puedes conseguir un 50% de descuento en nuestro nuevo men√∫: CrujienteR7. ¬°No esperes m√°s!</h6>
+			<a target="_blank" href="https://www.kfc.es/" class="more-link">Sacia tu hambre!</a>
 			<map name="kfc">
 				<area shape="rect" coords="0,0,600,350" alt="Suuuu" href="https://www.kfc.es/">
 			</map>
@@ -97,7 +107,7 @@ if (!isset($_SESSION['eClave']) && isset($_COOKIE['eClave'])) {
     // --------- --------- --------- --------- 
 	
       
-	//BUSQUEDA INFORM√?TICOS PARA EL COMBO
+	//BUSQUEDA INFORMÔøΩ?TICOS PARA EL COMBO
 	
 	 
 	var xmlhttp = new XMLHttpRequest();

@@ -33,9 +33,13 @@ if (!isset($_SESSION['eClave']) && isset($_COOKIE['eClave'])) {
 ?>
 <main class=" col-9 "   >
 <!-- SITIO LIBRE PARA INCLUIR -->
+<div class="col "  ><div class="p-3 border bg-light">
+<H3>¿Quieres trabajar como FREELANCE?</H3>
+<p>Eres experto en JavaScript, php, python, c#, c++, .Net IONIC ...</p>
+<p>Eston són los servicios demandados por empresas que búscan profesionales como tú. </p>
+<p><a href="registrarInformatico.PHP">Registraté</a> y podrás Tele-trabajar desde casa, como Freelance, con un contrato de prestación de servicios, que gestionaremos por tí. </p>
 
- 
-
+</div></div><br><br>
 <div class="col "  ><div class="p-3 border bg-light">
 <h4>Buscar Ofertas</h4>
  <a   data-toggle="collapse" href="#collapseExample"   aria-expanded="false" aria-controls="collapseExample">
@@ -51,7 +55,7 @@ if (!isset($_SESSION['eClave']) && isset($_COOKIE['eClave'])) {
 			  </select>
 		</div>
 		<div class="form-group">
-			<label for="asunto">Palabras clave:</label> 
+			<label for="asunto">Palabras clave: (JavaScript php python c# c++ .Net IONIC ...)</label> 
 			<input type="text" class="form-control" id="asunto" name="asunto" >
 		</div>
 		
@@ -68,6 +72,7 @@ if (!isset($_SESSION['eClave']) && isset($_COOKIE['eClave'])) {
 </div></div>
 
 <div class="col "  ><div class="p-3 border bg-light">
+
 <div id="resultadobusqueda">
 	
 </div>
