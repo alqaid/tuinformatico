@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+    <url>
+   	    <loc>https://tuinformatico.com/</loc>
+	    <lastmod>2020-11-01T16:12:20+03:00</lastmod>
+    </url>
+    <url>
+   	    <loc>https://tuinformatico.com/vista/index.php</loc>
+	    <lastmod>2020-11-01T16:12:20+03:00</lastmod>
+    </url>
+     <url>
+   	    <loc>https://tuinformatico.com/vista/buscarofertas.php</loc>
+		<lastmod>2020-11-06T16:12:20+03:00</lastmod>
+    </url>
+     <url>
+   	    <loc>https://tuinformatico.com/vista/descripcion.php</loc>
+		<lastmod>2020-11-06T16:12:20+03:00</lastmod>
+    </url>
+     <url>
+   	    <loc>https://tuinformatico.com/vista/Conocenos.php</loc>
+		<lastmod>2020-11-06T16:12:20+03:00</lastmod>
+    </url>
+     <url>
+   	    <loc>https://tuinformatico.com/vista/Contacto.php</loc>
+		<lastmod>2020-11-06T16:12:20+03:00</lastmod>
+    </url>
+</urlset>

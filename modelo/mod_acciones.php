@@ -62,7 +62,7 @@ function vista($vista,$campos,$where,$order){
 	if (isset($where)) 		$whereS = $where;
 	if (isset($order)) 		$orderS = $order;
 	
-	//echo $campos .' ' .$where .' ' .$order ;
+ //echo $campos .' ' .$where .' ' .$order ;
 	
 	switch ($vista) {
 		case 'cantidatosXoferta':
@@ -77,6 +77,12 @@ function vista($vista,$campos,$where,$order){
 						FROM informaticos,servicios,candidatos 
 						WHERE ciClaveInformaticos=iClave and csClaveServicio=sClave
 						$whereS 
+						ORDER BY $orderS";			 
+				break;
+		case 'tablainformaticos':
+				$sql = "SELECT  $camposS
+						FROM informaticos
+						WHERE 1=1 $whereS 
 						ORDER BY $orderS";			 
 				break;
 		default:

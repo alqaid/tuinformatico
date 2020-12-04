@@ -49,9 +49,9 @@ session_start();
 									<img class="card-img-top" src="../vista/images/oferta.png" alt="Card image" style="width:100%">
 									<div class="card-body">
 										<h4 class="card-title ">' . $fila[1] . '</h4>
-										<p class="card-text">' . $fila[0] . '</p>';
+										<p class="card-text">'  . $fila[0] . '</p>';
 										
-					if (isset($_SESSION['eClave'])) {   //if((isset($_SESSION['rol']) && $_SESSION['rol']=='informatico')) {
+					if (isset($_SESSION['iClave'])) {   //if((isset($_SESSION['rol']) && $_SESSION['rol']=='informatico')) {
 						$cards .=					'<button  class="btn btn-success" id="oferta' .   $fila[2]  . '" style="visibility:visible;" type="button" onclick="f_abrirOferta(' .   $fila[2]  . ')">ver más</button> ';
 					}else {
 						$cards .='<button type="button" class="btn btn-success disabled">ver más</button> ';

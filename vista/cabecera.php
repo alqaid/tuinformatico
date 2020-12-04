@@ -25,10 +25,10 @@ if (!isset($_SESSION['eClave']) && isset($_COOKIE['eClave'])) {
             </a>
             </svg>
 
-            <form action="#" class="form-inline">
-                <input class="form-control mr-sm-2" type="text" placeholder="Buscar profesionales!">
+            <form action="index.php" class="form-inline">
+                <input name="buscar" class="form-control mr-sm-2" type="text" placeholder="Buscar tecnologías!">
 
-                <span class="btn btn-success" type="submit" title="Buscar Profesionales"><i class="material-icons">search</i></span>
+                <button class="btn btn-success" type="submit"><i class="material-icons"></i>Buscar</button>
             </form>
 
             <img src="https://www.vayagif.com/images/banano.gif" alt="Mascota">

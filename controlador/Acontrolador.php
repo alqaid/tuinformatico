@@ -1,7 +1,7 @@
 <?php
 
-require('../modelo/mod_acciones.php');
 
+require('../modelo/mod_acciones.php');
 
 // --///////// controlador con los siguientes métodos \\\\\\\\\\\\\\\----
 /*
@@ -16,6 +16,7 @@ require('../modelo/mod_acciones.php');
 */
 // --------------------- *** ----------------- *** ----------------------------------------
 function contr_listar($listado_,$clave_,$clave2_){
+  
     //SELECT cFechaUnion,eNombre, sAsunto, sFechaFinPublicacion FROM candidatos,servicios,empresas WHERE csClaveservicio=sClave and seClaveEmpresa=eClave and ciClaveInformaticos=33
     $listado=permitirSoloLetrasNumeros($listado_);
     $clave=permitirSoloNumeros($clave_);
@@ -62,7 +63,7 @@ function contr_listar($listado_,$clave_,$clave2_){
 }
 // --------------------- *** ----------------- *** ----------------------------------------
 function contr_unirse($claveServicio,$claveInformatico){
-
+   
     $claveServicio_=permitirSoloNumeros($claveServicio);
     $claveInformatico_=permitirSoloNumeros($claveInformatico);
 
@@ -78,6 +79,7 @@ function contr_unirse($claveServicio,$claveInformatico){
 
 // --------------------- *** ----------------- *** ----------------------------------------
 function contr_contarRegistros($tipo,$claveServicio){
+    
     $claveServicio_=permitirSoloNumeros($claveServicio);
     $tabla='';
     $where='';
