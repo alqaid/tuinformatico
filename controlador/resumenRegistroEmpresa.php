@@ -36,16 +36,16 @@ if(isset($_SESSION['eClave']) || isset($_SESSION['iClave'])){
 <?php	
 			echo "<!----conetando-->";
 				require('../modelo/conexion_mysql.php');
-			$cif = $_POST["cif"];
-			$cp = $_POST["cp"];
-			$email = $_POST["correo"];
-			$municipio = $_POST["municipio"];
-			$nombre = $_POST["nombre"];
+			$cif = limpiarCaracteres($_POST["cif"]);
+			$cp = limpiarCaracteres($_POST["cp"]);
+			$email = limpiarCaracteres($_POST["correo"]);
+			$municipio = limpiarCaracteres($_POST["municipio"]);
+			$nombre = limpiarCaracteres($_POST["nombre"]);
 			$F = $_POST["birthday"];
-			$pais = $_POST["pais"];
-			$password = $_POST["password"];
+			$pais = limpiarCaracteres($_POST["pais"]);
+			$password = limpiarCaracteres($_POST["password"]);
 			$password_hash = password_hash($password, PASSWORD_DEFAULT);
-			$provincia = $_POST["provincia"];
+			$provincia = limpiarCaracteres($_POST["provincia"]);
 			 $sql = "INSERT INTO empresas (eCIF, eCP, eEmail, eMunicipio, eNombre, ePais, ePass, eProvincia, eFundacion) 
 						VALUES ('$cif','$cp','$email','$municipio','$nombre','$pais','$password_hash','$provincia', '$F')";
 			if ($mysqli->query($sql) === TRUE) {
@@ -54,6 +54,17 @@ if(isset($_SESSION['eClave']) || isset($_SESSION['iClave'])){
 			  echo "Error: " . $sql . "<br>" . $mysqli->error;
 			}
 			$mysqli->close();
+			
+//Para prevenir inyecciones de codigo html o javascript
+function limpiarCaracteres($string){
+    $respuesta='';
+    $respuesta=strip_tags($string);
+    $respuesta=trim($respuesta);
+    $respuesta=stripcslashes($respuesta);
+    $respuesta=htmlspecialchars($respuesta);
+    $respuesta=htmlentities($respuesta);
+    return $respuesta;
+}
 ?>
 <br>
 La empresa <?php echo $_POST['nombre'] ?> ya está registrada en tuinformatico.com <br>
@@ -75,10 +86,24 @@ Para salir pulse en terminar: <br>
 <!-- FIN SITIO LIBRE PARA INCLUIR -->
 </main> <!-- class="container" -->
 	<aside class=" col-3 "   > <!-- BANNER -->
-		<h2>Compartenos en tus redes sociales<h2>
-		<a href="https://twitter.com/?lang=es">
-		<img   src="../vista/images/twitter.png" alt=""  width="100%" height="520px">
+		<h2>Compartenos en tus redes sociales<h2><br>
+		<a href="https://www.facebook.com/sharer/sharer.php?u=https://tuinformatico.com">
+		<img   src="../vista/images/logo_facebook.png" alt=""  width="75px" height="75px">
 		</a>
+		<a href="https://twitter.com/intent/tweet?text=&url=https://tuinformatico.com&hashtags=tuinformatico">
+		<img   src="../vista/images/logo_twitter.jpg" alt=""  width="75px" height="75px">
+		</a>
+		<a href="https://api.whatsapp.com/send?text=Encuentra a tu informatico en este enlace: https://tuinformatico.com">
+		<img   src="../vista/images/logo_whatsapp.png" alt=""  width="75px" height="75px">
+		</a><br><br><br>
+			<img src="../vista/images/PublicidadRonaldo.jpg" width="100%" height="50%" usemap="#kfc">
+			<h6>Ronaldo no para de comer el pollo más rico del mundo, descubre las mejores ofertas para el pollo más crujiente</h6>
+			<img src="../vista/images/cr7kfc.gif" usemap="#kfc">
+			<h6>Con el código cr7 puedes conseguir un 50% de descuento en nuestro nuevo menú: CrujienteR7. ¡No esperes más!</h6>
+			<a target="_blank" href="https://www.kfc.es/" class="more-link">¡Sacia tu hambre!</a>
+			<map name="kfc">
+				<area shape="rect" coords="0,0,600,350" alt="Suuuu" href="https://www.kfc.es/">
+			</map>
 	</aside> <!-- FIN BANNER -->
  <?php
 	require('../vista/pie.php');

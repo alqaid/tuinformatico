@@ -36,20 +36,20 @@ if(isset($_SESSION['eClave']) || isset($_SESSION['iClave'])){
 <?php	
 			echo "<!----conetando-->";
 			require('../modelo/conexion_mysql.php');
-			$E = $_POST["Email"];
-			$c = $_POST["Contraseña"];
+			$E = limpiarCaracteres($_POST["Email"]);
+			$c = limpiarCaracteres($_POST["Contraseña"]);
 			$password_hash = password_hash($c, PASSWORD_DEFAULT);
-			$N = $_POST["Nombre"];
-			$A = $_POST["Apellido"];
+			$N = limpiarCaracteres($_POST["Nombre"]);
+			$A = limpiarCaracteres($_POST["Apellido"]);
 			$F = $_POST["birthday"];
-			$DNI = $_POST["dni"];
-			$T = $_POST["Telefono"];
-			$Pais = $_POST["pais"];
-			$M = $_POST["municipio"];
-			$provincia = $_POST["provincia"];
-			$CP = $_POST["cp"];
-			$Dp = $_POST["descripcionP"];
-			$DG = $_POST["descripcionG"];
+			$DNI = limpiarCaracteres($_POST["dni"]);
+			$T = limpiarCaracteres($_POST["Telefono"]);
+			$Pais = limpiarCaracteres($_POST["pais"]);
+			$M = limpiarCaracteres($_POST["municipio"]);
+			$provincia = limpiarCaracteres($_POST["provincia"]);
+			$CP = limpiarCaracteres($_POST["cp"]);
+			$Dp = limpiarCaracteres($_POST["descripcionP"]);
+			$DG = limpiarCaracteres($_POST["descripcionG"]);
 			 $sql = "INSERT INTO informaticos (iCP, iDescripcion, iDescripcionCorta, iDNI, iEmail, iMunicipio, iNombre, iPais, iPass, iProvincia, iTelefono, iNacimiento, iApellidos) 
 						VALUES ('$CP','$DG','$Dp','$DNI','$E','$M','$N','$Pais','$password_hash','$provincia','$T', '$F', '$A')";
 			if ($mysqli->query($sql) === TRUE) {
@@ -58,6 +58,17 @@ if(isset($_SESSION['eClave']) || isset($_SESSION['iClave'])){
 			  echo "Error: " . $sql . "<br>" . $mysqli->error;
 			}
 			$mysqli->close();
+			
+//Para prevenir inyecciones de codigo html o javascript
+function limpiarCaracteres($string){
+    $respuesta='';
+    $respuesta=strip_tags($string);
+    $respuesta=trim($respuesta);
+    $respuesta=stripcslashes($respuesta);
+    $respuesta=htmlspecialchars($respuesta);
+    $respuesta=htmlentities($respuesta);
+    return $respuesta;
+}
 ?>
 <br>
 Su cuenta <?php echo $_POST['Nombre'] ?> ya está registrada en tuinformatico.com <br>
@@ -82,10 +93,24 @@ Para salir pulse en terminar: <br>
 <!-- FIN SITIO LIBRE PARA INCLUIR -->
 </main> <!-- class="container" -->
 	<aside class=" col-3 "   > <!-- BANNER -->
-		<h2>Compartenos en tus redes sociales<h2>
-		<a href="https://twitter.com/?lang=es">
-		<img   src="../vista/images/twitter.png" alt=""  width="100%" height="520px">
+		<h2>Compartenos en tus redes sociales<h2><br>
+		<a href="https://www.facebook.com/sharer/sharer.php?u=https://tuinformatico.com">
+		<img   src="../vista/images/logo_facebook.png" alt=""  width="75px" height="75px">
 		</a>
+		<a href="https://twitter.com/intent/tweet?text=&url=https://tuinformatico.com&hashtags=tuinformatico">
+		<img   src="../vista/images/logo_twitter.jpg" alt=""  width="75px" height="75px">
+		</a>
+		<a href="https://api.whatsapp.com/send?text=Encuentra a tu informatico en este enlace: https://tuinformatico.com">
+		<img   src="../vista/images/logo_whatsapp.png" alt=""  width="75px" height="75px">
+		</a><br><br><br>
+			<img src="../vista/images/PublicidadRonaldo.jpg" width="100%" height="50%" usemap="#kfc">
+			<h6>Ronaldo no para de comer el pollo más rico del mundo, descubre las mejores ofertas para el pollo más crujiente</h6>
+			<img src="../vista/images/cr7kfc.gif" usemap="#kfc">
+			<h6>Con el código cr7 puedes conseguir un 50% de descuento en nuestro nuevo menú: CrujienteR7. ¡No esperes más!</h6>
+			<a target="_blank" href="https://www.kfc.es/" class="more-link">¡Sacia tu hambre!</a>
+			<map name="kfc">
+				<area shape="rect" coords="0,0,600,350" alt="Suuuu" href="https://www.kfc.es/">
+			</map>
 	</aside> <!-- FIN BANNER -->
  <?php
 	require('../vista/pie.php');
