@@ -39,7 +39,7 @@ Selecciona y contrata los mejores profesionales para tu negocio, contratar a est
 </p>
 
 <p>
-<a href="registrarEmpresa.php">Registraté</a> y oferta todos los servicios que necesites, los mejores profesionales del sector de las nuevas tecnologías, se unirán como candidatos, la última palabra la tienes tú.
+<a href="registrarEmpresa.php">Regístrate</a> y oferta todos los servicios que necesites, los mejores profesionales del sector de las nuevas tecnologías, se unirán como candidatos, la última palabra la tienes tú.
 </p>
 </div></div><br>
 

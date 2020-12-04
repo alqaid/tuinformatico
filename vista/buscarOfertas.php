@@ -37,7 +37,7 @@ if (!isset($_SESSION['eClave']) && isset($_COOKIE['eClave'])) {
 <H3>¿Quieres trabajar como FREELANCE?</H3>
 <p>Eres experto en JavaScript, php, python, c#, c++, .Net IONIC ...</p>
 <p>Eston són los servicios demandados por empresas que búscan profesionales como tú. </p>
-<p><a href="registrarInformatico.PHP">Registraté</a> y podrás Tele-trabajar desde casa, como Freelance, con un contrato de prestación de servicios, que gestionaremos por tí. </p>
+<p><a href="registrarInformatico.PHP">Regístrate</a> y podrás Tele-trabajar desde casa, como Freelance, con un contrato de prestación de servicios, que gestionaremos por tí. </p>
 
 </div></div><br><br>
 <div class="col "  ><div class="p-3 border bg-light">
