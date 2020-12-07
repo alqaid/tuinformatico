@@ -85,6 +85,12 @@ function vista($vista,$campos,$where,$order){
 						WHERE 1=1 $whereS 
 						ORDER BY $orderS";			 
 				break;
+		case 'tablaservicios':
+					$sql = "SELECT  $camposS
+							FROM servicios
+							WHERE 1=1 $whereS 
+							ORDER BY $orderS";			 
+				break;
 		default:
 			# code...
 			break;
