@@ -44,11 +44,12 @@ if (isset($_SESSION['eClave']) || isset($_SESSION['iClave'])) {
                         return false;
                     }
                 }
-
             </script>
+			<?php
+			require('../controlador/saneamientoRegistroEmpresa.php');
+			?>
 
-
-            <FORM onSubmit="return validate()" ACTION="../controlador/resumenRegistroEmpresa.php" METHOD="POST">
+            <FORM onSubmit="return validate()" ACTION="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" METHOD="POST">
                 Para realizar el registro debe rellenar la siguiente información sobre la Empresa: <br><br>
                 <div class="grid-container">
 				<div class="row">

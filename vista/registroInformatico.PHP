@@ -46,8 +46,12 @@ if (isset($_SESSION['eClave']) || isset($_SESSION['iClave'])) {
                     }
                 }
             </script>
-
-            <FORM onSubmit="return validate()" ACTION="../controlador/resumenRegistroInformatico.php" METHOD="POST">
+			
+			<?php
+			require('../controlador/saneamientoRegistroInformatico.php');
+			?>
+			
+            <FORM onSubmit="return validate()" ACTION="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" METHOD="POST">
                 <div class="grid-container">
                     <div class="row">
 					<div class="col-sm">
