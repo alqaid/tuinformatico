@@ -14,6 +14,7 @@
 										document.getElementById("I").style = "background-color:#28a745;border-color: #28a745";
 										document.getElementById("E").style = "color: #007bff";
 										document.getElementById("formautenticacion").action = "../controlador/loginInformatico.PHP";
+										document.getElementById("Error").innerHTML= "";
 								'>Informatico</strong>
 								</li>
 								<li class="nav-item">
@@ -25,6 +26,7 @@
 										document.getElementById("I").style = "color: #007bff";
 										document.getElementById("E").style = "background-color:#28a745;border-color: #28a745";
 										document.getElementById("formautenticacion").action = "../controlador/loginEmpresa.PHP";
+										document.getElementById("Error").innerHTML= "";
 								'>Empresa</strong>
 								</li>
 								
@@ -41,11 +43,11 @@
 									<p id="Error" class="bg-warning"></p>
                                     <div class="modal-body" >
                                         <form id="formautenticacion" method="POST" action="../controlador/loginInformatico.PHP">
-                                            <label for="e">Email:</label><br>
+                                            <label for="email">Email:</label><br>
                                             <input type="text" style="width : 250px; heigth : 5px" id="user" name="email"><br>
-                                            <label for="p">Contraseña:</label><br>
+                                            <label for="pass">Contraseña:</label><br>
                                             <input type="password" maxlength="64" id="pass" name="contraseña"><br>
-                                            <a href="https://www.w3schools.com">¿Olvido su contraseña?</a><br><br>
+                                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#Contra">¿Olvido su contraseña?</a><br><br>
                                             <input type="checkbox" name="recuerda"> <label>Recordadme</label><br>
 										 <div class="g-recaptcha" data-sitekey="6LexGuUZAAAAAIgFVgIkl0ncbuIF26e5Gc3alwVE"  ></div><br>
                                             <button type="submit" name="registro" class="btn btn-success"  >Iniciar sesion</button>
@@ -74,8 +76,9 @@ $("#formautenticacion").submit(function(event){
 		var myObj = JSON.parse(response);
 			if(myObj.success == "0"){
 				document.getElementById("Error").innerHTML = "Error al introducir usuario o contraseña";
+				grecaptcha.reset();
 			}else{
-				location.reload();
+				location.replace("../index.php");
 			}
 	});
 });

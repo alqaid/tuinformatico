@@ -75,18 +75,8 @@ if ((isset($_SESSION['rol'])) && ($_SESSION['rol']=='empresa')) {
  <?php
 	require('pie.php');
 ?>
-                                        <!-- The Modal -->
-					    <div class="modal fade" id="identificacion">
                         <?php
-							require('modalIdentificarse.php');
+							require('Modales.php');
 							?>
-                        </div>
-					
-					<!-- The Modal -->
-                        <div class="modal fade" id="registro">
-						<?php
-							require('modalRegistro.php');
-							?>
-                        </div>
                             </body>
                             </html>

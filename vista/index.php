@@ -147,19 +147,10 @@ Selecciona y contrata los mejores profesionales para tu negocio, contratar a est
 	require('pie.php');
 	//require('../controlador/pieConCookieVisitas.php');
 ?>
-                                        <!-- The Modal -->
-					    <div class="modal fade" id="identificacion">
+
                         <?php
-							require('modalIdentificarse.php');
+							require('Modales.php');
 							?>
-                        </div>
-					
-					<!-- The Modal -->
-                        <div class="modal fade" id="registro">
-						<?php
-							require('modalRegistro.php');
-							?>
-                        </div>
 
 <script>
   addEventListener('load',inicio,false);

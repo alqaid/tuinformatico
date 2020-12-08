@@ -36,20 +36,7 @@
 			</map>
         </aside> <!-- FIN BANNER -->
                     <?php
-                    require('pie.php');
-                    ?>
-                    <!-- The Modal -->
-                    <div class="modal fade" id="identificacion">
-                        <?php
-                        require('../vista/modalIdentificarse.php');
-                        ?>
-                    </div>
-
-                    <!-- The Modal -->
-                    <div class="modal fade" id="registro">
-                        <?php
-                        require('../vista/modalRegistro.php');
-                        ?>
-                    </div>
+							require('Modales.php');
+							?>
                     </body>
                     </html>

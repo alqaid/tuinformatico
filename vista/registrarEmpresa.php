@@ -109,18 +109,8 @@ if (isset($_SESSION['eClave']) || isset($_SESSION['iClave'])) {
                     <?php
                     require('pie.php');
                     ?>
-                    <!-- The Modal -->
-                    <div class="modal fade" id="identificacion">
-                        <?php
-                        require('../vista/modalIdentificarse.php');
-                        ?>
-                    </div>
-
-                    <!-- The Modal -->
-                    <div class="modal fade" id="registro">
-                        <?php
-                        require('../vista/modalRegistro.php');
-                        ?>
-                    </div>
+                    <?php
+							require('Modales.php');
+							?>
                     </body>
                     </html>

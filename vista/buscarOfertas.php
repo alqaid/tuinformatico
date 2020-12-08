@@ -108,18 +108,9 @@ if (!isset($_SESSION['eClave']) && isset($_COOKIE['eClave'])) {
 	require('pie.php');
 ?>
                                      
-					    <div class="modal fade" id="identificacion">
-                        <?php
-							require('modalIdentificarse.php');
+					    <?php
+							require('Modales.php');
 							?>
-                        </div>
-					
-					 
-                        <div class="modal fade" id="registro">
-						<?php
-							require('modalRegistro.php');
-							?>
-                        </div>
 
 
  

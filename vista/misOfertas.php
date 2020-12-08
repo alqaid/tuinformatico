@@ -139,19 +139,9 @@ $mensaje="";
  <?php
 	require('pie.php');
 ?>
-                                        <!-- The Modal -->
-					    <div class="modal fade" id="identificacion">
-                        <?php
-							require('modalIdentificarse.php');
+                       <?php
+							require('Modales.php');
 							?>
-                        </div>
-					
-					<!-- The Modal -->
-                        <div class="modal fade" id="registro">
-						<?php
-							require('modalRegistro.php');
-							?>
-                        </div>
 <script>
 	function fverCandidatos(claveOferta,oferta){
 		location.href = 'misOfertasCandidatos.php?oferta=' + claveOferta + '&ofertadescripcon=' + oferta; 
