@@ -36,14 +36,30 @@ if (isset($_SESSION['eClave']) || isset($_SESSION['iClave'])) {
 
             <script>
                 function validate() {
-
+					var auxiliar = 0;
                     var a = document.getElementById("password").value;
                     var b = document.getElementById("confirm_password").value;
-                    if (a != b) {
-                        alert("Las contraseñas deben ser iguales");
-                        return false;
-                    }
+                    var fecha = new Date(document.getElementById("Nacimiento").value);
+					var actual= new Date();
+					
+					if(actual.getFullYear()<fecha.getFullYear()){
+						if(a!=b){
+							alert("Contraseñas no coinciden");
+						}
+						alert("Interesante que una empresa que no se a fundado busque informaticos");
+						return false;
+					}else if((actual.getFullYear()==fecha.getFullYear()) && (actual.getMonth()<fecha.getMonth())){
+						if(a!=b){
+							alert("Contraseñas no coinciden");
+						}
+						alert("Interesante que una empresa que no se a fundado busque informaticos");
+						return false;
+					}else if(a!=b){
+							alert("Contraseñas no coinciden");
+							return false;
+						}	
                 }
+
             </script>
 			<?php
 			require('../controlador/saneamientoRegistroEmpresa.php');

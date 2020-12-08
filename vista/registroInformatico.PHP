@@ -52,10 +52,10 @@ if (isset($_SESSION['eClave']) || isset($_SESSION['iClave'])) {
 					
 					if((a!=b) || (aux<16)){
 						if(a!=b){
-							alert("Contraseñas no coinciden")
+							alert("Contraseñas no coinciden");
 						}
 						if(aux<16){
-							alert("Necesitas ser mayor de 16")
+							alert("Necesitas ser mayor de 16");
 						}
 						return false;
 					}	
