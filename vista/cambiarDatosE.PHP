@@ -69,8 +69,11 @@ if (!isset($_SESSION['eClave']) || isset($_SESSION['iClave'])) {
 
             </script>
 
+			<?php
+			require('../controlador/saneamientoCambiarDatosE.php');
+			?>
 
-            <FORM onSubmit="return validate()" ACTION="../controlador/resumenCambioE.php" METHOD="POST">
+            <FORM onSubmit="return validate()" ACTION="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" METHOD="POST">
                 Para realizar el registro debe rellenar la siguiente información sobre la Empresa: <br><br>
                 <div class="grid-container">
 				<div class="row">

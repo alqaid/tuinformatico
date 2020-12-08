@@ -12,9 +12,9 @@
 						window.location.href="index.php";
 						</script>';
 					} else {
-						echo("Lamento informarle de que no se ha podido crear el registro, los motivos son los siguientes:<br><br>");
-						echo "Error: " . $sql . "<br>" . $mysqli->error;
-						echo("<br><br>Pero no se preocupe, puede volver a intentarlo cuantas veces quiera.<br><br>");
+						//echo "Error: " . $sql . "<br>" . $mysqli->error;
+						echo("Lamento informarle de que no se ha podido crear el registro<br><br>");
+						echo ("Seguramente sea porque el correo que ha empleado ya está registrado, pruebe a poner un correo diferente por favor.<br><br>");
 					}
 					$mysqli->close();
 ?>
