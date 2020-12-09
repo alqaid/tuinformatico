@@ -49,7 +49,7 @@
                                             <input type="password" maxlength="64" id="pass" name="contraseña"><br>
                                             <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#Contra">¿Olvido su contraseña?</a><br><br>
                                             <input type="checkbox" name="recuerda"> <label>Recordadme</label><br>
-										 <div class="g-recaptcha" data-sitekey="6LexGuUZAAAAAIgFVgIkl0ncbuIF26e5Gc3alwVE"  ></div><br>
+										 <div id="cap1" class="g-recaptcha" data-sitekey="6LexGuUZAAAAAIgFVgIkl0ncbuIF26e5Gc3alwVE"  ></div><br>
                                             <button type="submit" name="registro" class="btn btn-success"  >Iniciar sesion</button>
                                         </form>
                                         <a href="../vista/registroInformatico.php" id="registrarse">¡Registrate!</a>
@@ -76,7 +76,9 @@ $("#formautenticacion").submit(function(event){
 		var myObj = JSON.parse(response);
 			if(myObj.success == "0"){
 				document.getElementById("Error").innerHTML = "Error al introducir usuario o contraseña";
-				grecaptcha.reset();
+				 var id = $('.g-recaptcha', form).attr('id');
+				grecaptcha.reset(id);
+			
 			}else{
 				location.replace("../index.php");
 			}

@@ -45,7 +45,7 @@
                                         <form id="formContra" method="POST" action="../controlador/enviarContraI.php">
                                             <label for="emailc">Email:</label><br>
                                             <input type="text" style="width : 250px; heigth : 5px" id="emailc" name="email"><br> <br>
-										 <div class="g-recaptcha" data-sitekey="6LexGuUZAAAAAIgFVgIkl0ncbuIF26e5Gc3alwVE"  ></div><br>
+										 <div id="cap2" class="g-recaptcha" data-sitekey="6LexGuUZAAAAAIgFVgIkl0ncbuIF26e5Gc3alwVE"  ></div><br>
                                             <button type="submit" name="registro" class="btn btn-success"  >Recuperar</button>
                                         </form>
                                         <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#identificacion">Volver al login</a><br><br>
@@ -68,10 +68,13 @@ $("#formContra").submit(function(event){
 		data : form_data
 	}).done(function(response){ 
 		var myObj = JSON.parse(response);
-		grecaptcha.reset(cap);
+		//var id = $('.g-recaptcha', form).attr('id');
+		//grecaptcha.reset(id);
 			if(myObj.success == "1"){
+				
 				document.getElementById("Notificacion").innerHTML = "Se envio a su cuenta un correo para confirmar el cambio.";
 				document.getElementById("Notificacion").className = "alert alert-success";
+				
 			}else{
 				document.getElementById("Notificacion").innerHTML = "Error al introducir usuario o contraseña";
 				document.getElementById("Notificacion").className = "alert alert-warning";

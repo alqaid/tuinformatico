@@ -9,7 +9,7 @@
 
  
 require_once('../controlador/librerias/recaptchalib.php');
-
+require('../controlador/email.php');
 // your secret key DEL SERVIDOR
 $secret = "6LexGuUZAAAAALlFYL-RJ3KunfvJR3vojpECe6yw";
  
@@ -66,6 +66,7 @@ if (isset($_SESSION['eClave']) || isset($_SESSION['iClave'])) {
     if (!$result) {
 		echo '{"success":"0"}';
     } else {
+	 $retorna=	enviaremail($email,"su codigo es");
 		echo '{"success":"1"}';
     }
 }else{
