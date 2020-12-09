@@ -7,7 +7,7 @@
 					$password_hash = password_hash($c, PASSWORD_DEFAULT);
 					$N = limpiarCaracteres($_POST["Nombre"]);
 					$A = limpiarCaracteres($_POST["Apellido"]);
-					$F = $_POST["birthday"];
+					$F = limpiarCaracteres($_POST["birthday"]);
 					$DNI = limpiarCaracteres($_POST["dni"]);
 					$T = limpiarCaracteres($_POST["Telefono"]);
 					$Pais = limpiarCaracteres($_POST["pais"]);

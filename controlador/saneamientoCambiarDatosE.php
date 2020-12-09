@@ -7,7 +7,7 @@
 					$email = limpiarCaracteres($_POST["correo"]);
 					$municipio = limpiarCaracteres($_POST["municipio"]);
 					$nombre = limpiarCaracteres($_POST["nombre"]);
-					$F = $_POST["birthday"];
+					$F = limpiarCaracteres($_POST["birthday"]);
 					$pais = limpiarCaracteres($_POST["pais"]);
 					$password = limpiarCaracteres($_POST["password"]);
 					$password_hash = password_hash($password, PASSWORD_DEFAULT);
