@@ -152,39 +152,7 @@ Selecciona y contrata los mejores profesionales para tu negocio, contratar a est
 							require('Modales.php');
 							?>
 
-<script>
-  addEventListener('load',inicio,false);
- 
-   function inicio()
-  {
-	// --------- --------- --------- --------- 
-	// JAVASCRIPT EVENTOS LOAD
-    // --------- --------- --------- --------- 
-	
-      
-	//BUSQUEDA INFORM�?TICOS PARA EL COMBO
-	
-	 /*
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange = function() {
-	  if (this.readyState == 4 && this.status == 200) {
-		document.getElementById("resultadobusqueda").innerHTML = this.responseText;
-	  }
-	};
-	xmlhttp.open("POST", "../controlador/buscar_informaticos.php"<?php echo $filtro_informaticos;  ?>, true);
-	xmlhttp.send();
-	
-
-   */
-	
-}
- 
- 
-</script> 
-
-<script>	
-	document.getElementById("menu_cabecera_home").className  = "nuestromenus_activado";				
-</script>
+<script type="text/javascript" src="../vista/js/index.js"></script>
 						
                             </body>
                             </html>

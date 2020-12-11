@@ -38,36 +38,10 @@ if (!isset($_SESSION['eClave']) || isset($_SESSION['iClave'])) {
 
     $result = $query->fetch(PDO::FETCH_ASSOC);
 			?>
-			
-		<script>
-                function validate() {
-					function validate() {
-					var auxiliar = 0;
-                    var a = document.getElementById("password").value;
-                    var b = document.getElementById("confirm_password").value;
-                    var fecha = new Date(document.getElementById("Nacimiento").value);
-					var actual= new Date();
-					
-					if(actual.getFullYear()<fecha.getFullYear()){
-						if(a!=b){
-							alert("Contraseñas no coinciden");
-						}
-						alert("Interesante que una empresa que no se a fundado busque informaticos");
-						return false;
-					}else if((actual.getFullYear()==fecha.getFullYear()) && (actual.getMonth()<fecha.getMonth())){
-						if(a!=b){
-							alert("Contraseñas no coinciden");
-						}
-						alert("Interesante que una empresa que no se a fundado busque informaticos");
-						return false;
-					}else if(a!=b){
-							alert("Contraseñas no coinciden");
-							return false;
-						}	
-                }
-                }
 
-            </script>
+
+			
+	
 
 			<?php
 			require('../controlador/saneamientoCambiarDatosE.php');
@@ -139,5 +113,7 @@ if (!isset($_SESSION['eClave']) || isset($_SESSION['iClave'])) {
 							require('Modales.php');
 							?>
                     </div>
+					
+					<script type="text/javascript" src="../vista/js/cambiarDatosE.js"></script>
                     </body>
                     </html>

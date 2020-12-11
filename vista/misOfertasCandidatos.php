@@ -90,10 +90,6 @@ if (isset($_SESSION['eClave'])) {
 							?>
 
 
-<script>
-	function fpagoTPV(iClave,sClave){
-		location.href = 'pago.php?iClave=' + iClave + '&sClave=' + sClave; 
-	}
-</script>                        
+<script type="text/javascript" src="../vista/js/misOfertasCandidatos.js"></script>	                       
                             </body>
                             </html>

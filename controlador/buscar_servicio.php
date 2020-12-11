@@ -83,14 +83,7 @@ session_start();
 				die('Error:'.$e->GetMessage());
 			}
 		
-//}else{
-	//	//$statusCode='500';
-	//	//header('Location: ../index.php');
-	//	echo "No autenticado";
-	//	////echo '{"success":"0","respuesta":"No autenticado"}';
-		
-		
-	//}
+
 
  
 ?>	   

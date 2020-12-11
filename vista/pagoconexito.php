@@ -73,5 +73,6 @@ if (isset($_SESSION['eClave'])) {//if ((isset($_SESSION['rol'])) && ($_SESSION['
                         <?php
 							require('Modales.php');
 							?>
+<script type="text/javascript" src="../vista/js/pago.js"></script>	  							
                             </body>
                             </html>

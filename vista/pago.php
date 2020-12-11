@@ -112,5 +112,8 @@ if ($pago==''){
                          <?php
 							require('Modales.php');
 							?>
+							
+							
+<script type="text/javascript" src="../vista/js/pago.js"></script>	   							
                             </body>
                             </html>

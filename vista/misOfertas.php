@@ -142,10 +142,6 @@ $mensaje="";
                        <?php
 							require('Modales.php');
 							?>
-<script>
-	function fverCandidatos(claveOferta,oferta){
-		location.href = 'misOfertasCandidatos.php?oferta=' + claveOferta + '&ofertadescripcon=' + oferta; 
-	}
-</script>						
+<script type="text/javascript" src="../vista/js/misOfertas.js"></script>						
                             </body>
                             </html>

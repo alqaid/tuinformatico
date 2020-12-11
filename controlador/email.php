@@ -32,7 +32,7 @@ if(!$mail->Send()) {
 } else {
    $mensaje_Devolucion='¡Mensaje enviado correctamente!. En breve recibirá una respuesta';
 }
-echo $mensaje_Devolucion;
+return $mensaje_Devolucion;
 }
 
 
