@@ -8,8 +8,7 @@
 					//Devolvemos una retroalimentación
 					if ($mysqli->query($sql) === TRUE) {
 						echo'<script type="text/javascript">
-						alert("Registro Creado");
-						window.location.href="index.php";
+						window.location.href="exito.php";
 						</script>';
 					} else {
 						//echo "Error: " . $sql . "<br>" . $mysqli->error;
