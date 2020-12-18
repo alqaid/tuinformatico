@@ -16,13 +16,12 @@ if (isset($_SESSION['eClave'])) {
     <thead>
 	  <tr>
 	  	<th>Fecha Alta</th>
-        <th>Nombre</th>
-        <th>Email</th>
-		<th>Teléfono</th>
+        <th>Nombre</th>        
 		<th>Descripción</th>		
       </tr>
     </thead>
     <tbody>";
+	//<th>Email</th>		<th>Teléfono</th>
     if (isset($_GET['oferta'])  ){
         $oferta=$_GET['oferta'];
         
@@ -34,8 +33,10 @@ if (isset($_SESSION['eClave'])) {
             foreach ($ARRAY as $REGISTRO ){                   
                     $iClave=$REGISTRO['iClave'];
                     $sClave=$REGISTRO['sClave'];
-                    $mensaje.= "<tr><td>".$REGISTRO['cFechaUnion']."</td><td>".$REGISTRO['iNombre']."</td><td>".$REGISTRO['iEmail']."</td><td>".$REGISTRO['iTelefono']."</td><td>".$REGISTRO['iDescripcionCorta']."</td>";	        	
-                    $mensaje.= "<td><button type='button' class='btn btn-success'  onClick='fpagoTPV($iClave,$sClave);'>Contratar</button></td></tr>";
+                    //$mensaje.= "<tr><td>".$REGISTRO['cFechaUnion']."</td><td>".$REGISTRO['iNombre']."</td><td>".$REGISTRO['iEmail']."</td><td>".$REGISTRO['iTelefono']."</td><td>".$REGISTRO['iDescripcionCorta']."</td>";
+					$mensaje.= "<tr><td>".$REGISTRO['cFechaUnion']."</td><td>".$REGISTRO['iNombre']."</td><td>".$REGISTRO['iDescripcionCorta']."</td>";					
+					$mensaje.= "<td><button type='button' class='btn btn-success'  onClick='f_abrirDetalleInformatico($iClave);'>Candidato</button> ";
+                    $mensaje.= "    <button type='button' class='btn btn-success'  onClick='fpagoTPV($iClave,$sClave);'>Contratar</button></td></tr>";
                 }
         }
     }
@@ -87,6 +88,9 @@ if (isset($_SESSION['eClave'])) {
 ?>
                         <?php
 							require('Modales.php');
+							?>
+							 <?php
+							require('modalDetalleInformatico.php');
 							?>
 
 

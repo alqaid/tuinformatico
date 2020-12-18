@@ -10,7 +10,7 @@
 <?php
 	require('cabecera.php');
 ?>
-<main class=" col-9 "   >
+<main class="col-9 col-md-12"   >
 <!--  SITIO LIBRE PARA INCLUIR  -->
 
 
@@ -124,7 +124,7 @@ En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que
 
 <!-- FIN SITIO LIBRE PARA INCLUIR -->
 </main> <!-- class="container" -->
-	<aside class=" col-3 "   > <!-- BANNER -->
+	<aside class="col-3 col-md-11"   > <!-- BANNER -->
 		<h2>Compartenos en tus redes sociales<h2><br>
 		<a href="https://www.facebook.com/sharer/sharer.php?u=https://tuinformatico.com">
 		<img   src="images/logo_facebook.png" alt=""  width="75px" height="75px">

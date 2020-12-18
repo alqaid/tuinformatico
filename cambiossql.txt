@@ -1,1 +1,0 @@
-alter table candidatos add column cFechaUnion TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
